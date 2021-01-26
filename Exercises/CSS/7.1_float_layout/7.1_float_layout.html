@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Layout</title>
+    <style>
+        html {
+            border: 1px solid black;
+        }
+        #container {
+            max-width: 960px;
+            margin: 30px auto;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 3px;
+        }
+        .box {
+            border: 1px solid black;
+        }
+        #box-1 {
+            width: 100%;
+            float: left;
+            background-color: goldenrod;
+            text-align: center;
+            height: 5em;
+            padding: 1em;
+        }
+        #box-2 {
+            width: 29%;
+            float: left;
+            background-color: green;
+            text-align: left;
+            height: 20em;
+            padding: 1em;
+        }
+        #box-3 {
+            width: 69%;
+            float: right;
+            background-color:purple;
+            text-align: right;
+            height: 20em;
+            padding: 1em;
+        }
+        #box-4 {
+            width: 100%;
+            float: left;
+            background-color: rgb(66, 148, 255);
+            text-align: center;
+            height: 5em;
+            padding: 1em;
+        }
+     
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <div id="box-1" class="box">
+            <h3>Header</h3>
+        </div>
+        <div id="box-2" class="box">
+            <h3>Side</h3>
+        </div>
+        <div id="box-3" class="box">
+            <h3>Main</h3>
+        </div>
+        <div id="box-4" class="box">
+            <h3>Footer</h3>
+        </div>
+    </div>
+</body>
+</html>
