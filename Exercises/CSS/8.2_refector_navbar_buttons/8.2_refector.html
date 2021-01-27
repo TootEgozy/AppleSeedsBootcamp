@@ -26,6 +26,7 @@
        
         #about {
         color:rgb(95, 53, 119);
+        margin-left: 10em;
         }
        
         #card {
@@ -33,6 +34,9 @@
            width: 14em;
            box-shadow: 2px 2px 3px 1px darkslategray;
            background-color: rgb(248, 207, 229);
+           right:10px;
+           bottom: 10px;
+          
         }
       
         #card img {
@@ -47,17 +51,21 @@
        }
 
        #container {
-            float: left;
+          
+           display: block;
+            float: center;
             padding: 1% 1% 1% 20%;       
             max-width: 960px;    
         }
 
         .box {
+            position: absolute;
             box-sizing: border-box;
             box-align: center;
         }
 
         #headlines {
+            display:block;
             max-width: 100%;
             float: center;
             text-align: center;
@@ -67,11 +75,41 @@
         }
 
         #myPic {
-            float: center; 
+            float: center;
+            display: block; 
+            margin-left: 10em;
+            margin-top: 5em;
         }
 
         .clr {
             clear: both;
+        }
+
+        li {
+            display: inline;
+            padding: 5px;
+            padding-left: 5px;
+            
+        }
+
+        li:hover {
+            color:red;
+            background-color: rgb(153, 195, 201);
+            cursor: pointer;
+            
+        }
+
+        #menuList {
+            display: block;
+            background-color: powderblue;
+            border: 1px solid rgb(153, 195, 201); 
+            border-radius: 10px;
+            width: fit-content; 
+            margin: 0.5em;
+            position:fixed;
+            top: 0;
+            padding: 5px;
+            right: 40%;       
         }
 
 
@@ -80,14 +118,25 @@
 
 <body>
     <div id="container">
-        <div id="headlines" class="box">
+        <div class="box" id="menu">
+            <ul id=menuList>
+                <li>Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+                <li>Option 4</li>
+                <li>Option 5</li>
+                <li>Option 6</li>
+            </ul>
+        </div>
+
+        <div id="headlines" class="clr">
             <div id="main-heading">
                 <h1>Hello! My Name Is Toot</h1>
             </div>
                 <h2>I am a programmer <i class="fas fa-laptop-code"></i></h2>
         </div>
         <div class="clr"></div>
-            <img src="myPic.jpg" width="400px" class="box" id="myPic">
+            <img src="myPic.jpg" width="400px" class="clr" id="myPic">
         <div class="clr"></div>
         <div id="about" class="box">
             <p>
@@ -97,9 +146,6 @@
             </p>
             <a href="https://www.organi-co.co.il/growing-plants" class= "box">Here's a link to my favorite source</a>
         </div>
-
-        <br>
-        <button type="button">A Clickable Button :)</button>
         
         <div id="contact" class="box">
             <!--I don't really use social media-->
@@ -118,9 +164,10 @@
             <br>
             <div id="inCard">
                 <a href="https://www.thespruce.com/how-to-grow-monstera-deliciosa-5072671" class="cardlink">
-                    Learn how to grow a monsteras at home</a>
+                    Learn how to grow a monstera at home</a>
             </div>
         </div>
+
     </div>
         
 </body>
