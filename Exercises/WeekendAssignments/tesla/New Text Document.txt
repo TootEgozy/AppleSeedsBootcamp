@@ -1,0 +1,56 @@
+/** Tesla Project Info **/
+
+a link to tesla page src: view-source:https://www.tesla.com/model3
+
+/***** page title *****/
+
+tesla icon for HTML:
+<img src="https://img.icons8.com/color/48/000000/tesla-logo.png"/>
++
+icon link for the meta:
+<a href="https://icons8.com/icon/34784/tesla">Tesla icon by Icons8</a>
+
+
+/*****navbar*****/
+
+***navbar font:***
+
+**main (navbar + upper footer + order now button)**
+"Gotham Medium" - 400×
+Family: "Gotham Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+Style:normal
+Weight: 400
+Size: 14px
+Line Height: 18px
+Color: #ffffff
+
+**secondairy (lower footer)**
+"Gotham Book" - 400×
+Family: "Gotham Book", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+Style: normal
+Weight: 400
+Size: 12px
+Line Height: 18px
+Color: #ffffff
+
+****
+
+***navbar: line:***
+list items
+
+margin: 0px 10px
+
+
+
+
+tesla logo:
+
+<svg class="tds-icon tds-icon-wordmark--inverted" aria-labelledby="tds-menu-header-main--logo_title"></svg>
+
+or, my findings:
+
+<link href="//db.onlinewebfonts.com/c/77adad871ec11261e07c5a2d218726c3?family=TESLA" rel="stylesheet" type="text/css"/>
+
+navbar scale:
+
+

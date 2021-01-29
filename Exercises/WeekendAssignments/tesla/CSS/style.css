@@ -1,0 +1,54 @@
+    /* Reset */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    ul {
+        display: inline;
+    }
+    /* Navbar */
+    
+    #navbar {
+        font-family: "Gotham Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        Size: 14px;
+        line-height: 18px;
+        color: #ffffff;
+        background-color: transparent;
+        position: relative;
+    }
+    
+    #navbar .logo {
+        font-family: "TESLA regular";
+        line-height: 18px;
+        color: #ffffff;
+        margin: 0px 10px;
+        display: inline;
+        float: left;
+    }
+    
+    #navbar .navbar-mid-links,
+    .navbar-right-links {
+        margin: 0px 10px;
+        display: inline;
+    }
+    #navbar li {
+        display:inline;
+    }
+    
+    #navbar .navbar-mid {
+        margin: auto;
+        position: absolute;
+        left: 25%;
+    }
+    
+    #navbar .navbar-right {
+        margin-right: 0px;
+        float: right;
+    }
