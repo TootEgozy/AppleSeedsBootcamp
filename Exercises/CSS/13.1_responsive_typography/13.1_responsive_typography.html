@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.1 Responsive Typography</title>
+
+    <style>
+
+        h1 {
+            font-size: 10px;
+        }
+
+        /* Default */
+        @media screen and (max-width: 320px) {
+        h1 {font-size: 20px}
+        p {font-size: 15px}
+        }
+         
+        /* Medium screen */
+        @media screen and (min-width: 321px) {
+        h1 {font-size: calc(20px + 2vh)}
+        p {font-size: calc(15px+2vh)}
+        }
+         
+        /* Large Screen */
+        @media screen and (min-width: 1000px) {
+        h1 {font-size: 20px}
+        p {font-size: 15px}
+        }
+         
+
+    </style>
+
+
+</head>
+<body>
+    <h1>Lorem, ipsum dolor.</h1>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Fugiat, delectus reprehenderit! Beatae temporibus et aspernatur 
+        assumenda molestiae dignissimos id accusamus fugiat quae. Nisi impedit harum, 
+        architecto distinctio exercitationem, atque voluptate expedita explicabo, 
+        aliquam voluptas veritatis nam possimus ea labore. Rerum.
+    </p>
+    
+</body>
+</html> 
