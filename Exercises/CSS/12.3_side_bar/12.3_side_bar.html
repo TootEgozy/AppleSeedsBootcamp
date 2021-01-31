@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Bar Responsive</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div [class*="box"] {
+            border: 1px solid black;
+            margin: 2px;
+            float: left;
+            text-align: center;
+        }        
+
+      .box1 {
+          width: 100%;
+          height: 10em;
+          background-color: coral;
+      }
+
+      .box4 {
+          width: 100%;
+          height: 10em;
+          background-color: aquamarine;
+      }
+
+
+
+    /* For Smartphones */
+
+    @media screen and (max-width: 600px) {
+        .box2 {
+            display: none;
+        }
+
+        .box3 {
+            width: 100%;
+            height: 30em;
+            background-color: violet;
+        }
+
+    }
+
+    @media screen and (min-width: 601px) {
+        .box2 {
+           width: 30%;
+           height: 30em;
+           background-color: wheat;
+        }
+
+        .box3 {
+            width: 69%;
+            height: 30em;
+            background-color: violet;
+        }
+
+    }
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <h1>Top</h1>
+        </div>
+
+        <div class="box2">
+            <h1>Side Bar</h1>
+        </div>
+
+        <div class="box3">
+            <h1>Main Content</h1>
+        </div>
+
+        <div class="box4">
+            <h1>Footer</h1>
+        </div>
+    </div>
+</body>
+</html>
