@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: monospace;
+}
+
+body {
+  background-color: thistle;
+}
+
+.navbar {
+  width: 100vw;
+  background-color: wheat;
+  padding: 5px;
+}
+
+.navbar ul {
+  display: block;
+  margin: auto;
+}
+
+.navbar ul li {
+  display: inline;
+  list-style: none;
+  border: 3px dotted thistle;
+  margin: 0px 10px;
+}
+
+.navbar ul li:hover {
+  display: inline;
+  list-style: none;
+  color: tomato;
+  border: 3px dotted thistle;
+  margin: 0px 10px;
+}
+
+.main {
+  background-color: wheat;
+  display: block;
+  width: 50rem;
+  height: 50rem;
+  position: relative;
+  top: 3rem;
+  margin: auto;
+}
+
+.main h1,
+h2,
+p {
+  display: block;
+  position: relative;
+  top: 3rem;
+  left: 5rem;
+  margin: 2rem;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  p {
+    font-size: 10px;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 4vw;
+  }
+  h2 {
+    font-size: 3vw;
+  }
+  p {
+    font-size: 2vw;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 1000px) {
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 35px;
+  }
+  p {
+    font-size: 20px;
+  }
+}

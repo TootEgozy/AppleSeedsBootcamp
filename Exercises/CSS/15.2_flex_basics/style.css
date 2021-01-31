@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.box1 {
+  background-color: green;
+  height: 200px;
+  width: 200px;
+}
+
+.box2 {
+  background-color: blue;
+  height: 200px;
+  width: 200px;
+}
+
+.box3 {
+  background-color: red;
+  height: 200px;
+  width: 200px;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(242, 255, 195);
+  height: 80vh;
+  width: 80vw;
+}
