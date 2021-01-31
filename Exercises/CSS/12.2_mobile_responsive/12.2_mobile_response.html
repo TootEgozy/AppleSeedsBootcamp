@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Response</title>
+   <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div [class*="col"] {
+            background-color: teal;
+            color: white;
+            padding: 20px;
+            border: 1px solid blue;
+            display: inline-block;
+            overflow: auto;
+        }
+
+        @media screen and (max-width: 600px) {
+            div [class*="col"] {
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            .col {
+                width:25%;
+                display: inline-block;
+                float: left;
+            
+            }
+        }
+    
+   </style> 
+
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis, magni fuga delectus porro cupiditate iusto sint, 
+                rerum accusantium facilis qui ullam enim eveniet 
+                voluptatem neque voluptatum necessitatibus quo optio sequi!
+            </p>
+        </div>
+
+        <div class="col">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis, magni fuga delectus porro cupiditate iusto sint, 
+                rerum accusantium facilis qui ullam enim eveniet 
+                voluptatem neque voluptatum necessitatibus quo optio sequi!   
+            </p>
+        </div>
+
+        <div class="col">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis, magni fuga delectus porro cupiditate iusto sint, 
+                rerum accusantium facilis qui ullam enim eveniet 
+                voluptatem neque voluptatum necessitatibus quo optio sequi!   
+            </p>
+        </div>
+
+        <div class="col">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis, magni fuga delectus porro cupiditate iusto sint, 
+                rerum accusantium facilis qui ullam enim eveniet 
+                voluptatem neque voluptatum necessitatibus quo optio sequi!   
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>
