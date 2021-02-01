@@ -1,0 +1,18 @@
+.box1 {
+  width: 20vw;
+  height: 40vh;
+  background-color: purple;
+  position: relative;
+}
+
+.box1:after {
+  content: "";
+  background-color: red;
+  position: absolute;
+  width: 50%;
+  height: inherit;
+}
+
+.box1:hover::after {
+  background: green;
+}
