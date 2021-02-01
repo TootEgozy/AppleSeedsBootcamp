@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 2vw;
+  color: fuchsia;
+  background-color: #f7f7f7;
+  width: fit-content;
+  line-height: 7vh;
+  padding: 1vw;
+}
+
+p {
+  margin: 2vw;
+  display: block;
+  width: 20vw;
+  height: 20vh;
+  border: 1px dotted darkgrey;
+  padding: 2vw;
+  text-align: center;
+}
+
+span {
+  text-decoration: underline;
+}
+
+span:hover {
+  color: fuchsia;
+}
+
+[data-name="data1"]:hover::after {
+  content: "Tooltip";
+  color: black;
+  background-color: rgb(255, 0, 255, 0.8);
+  width: 4vw;
+  height: 2vh;
+  top: 28vh;
+
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  z-index: 3;
+}
