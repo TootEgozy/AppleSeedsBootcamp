@@ -1,0 +1,9 @@
+a[href]::after {
+  content: " (" attr(href) ") ";
+  text-decoration: underline;
+  color: blueviolet;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,15 @@
+.box1 {
+  width: 20vw;
+  height: 40vh;
+  background-color: purple;
+  position: relative;
+  z-index: -1;
+}
+
+.box1::before {
+  content: "";
+  background-color: red;
+  position: absolute;
+  width: 50%;
+  height: inherit;
+}
