@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: wheat;
+  padding: 5px;
+  width: 100%;
+  z-index: -1;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  list-style-type: none;
+  z-index: -1;
+}
+
+li {
+  position: relative;
+  display: flex;
+  margin: 10px 0px;
+  line-height: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  z-index: 0;
+}
+
+/* Animation */
+
+li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 0px;
+  background-color: violet;
+  transition: width 0.3s;
+  transform: translate(-35px, -3px);
+}
+
+li:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 120px;
+  background-color: violet;
+  transform: translate(-35px, -3px);
+  transition: width 1s;
+}
+
+li::after {
+  content: "";
+  display: block;
+  text-align: right;
+  position: absolute;
+  height: 5px;
+  width: 0px;
+  background-color: violet;
+  transition: width 0.3s;
+  transform: translate(-35px, 40px);
+}
+
+li:hover::after {
+  content: "";
+  display: block;
+  text-align: right;
+  position: absolute;
+  height: 5px;
+  width: 120px;
+  background-color: violet;
+  transform: translate(-35px, 40px);
+  transition: width 1s;
+}
