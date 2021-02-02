@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  transform: translate(-200px, 0px);
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  z-index: 2;
+  transition: 2s;
+}
+
+.box:hover::before {
+  content: "";
+  position: absolute;
+  transform: translate(0px, 0px);
+  width: 200px;
+  height: 200px;
+  background-color: rgb(255, 127, 0);
+  z-index: 2;
+}
