@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24.1 Grid</title>
+    <link rel="stylesheet" href="css/normalize.css">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.grid {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+    max-width: 960px;  
+}
+
+
+.grid > div {
+    padding: 50px;
+}
+
+
+.item-1 {
+    background-color: lightcoral;
+    border-radius: 20px;
+    grid-area: item1; 
+    grid-row: 1;
+    grid-column: 1 / span 2 ;
+
+
+}
+
+.item-2 {
+    background-color: lightskyblue;
+    border-radius: 20px;
+    grid-area: item2;
+    grid-row: 1;
+    grid-column: 3 / span 2;
+
+}
+
+.item-3 {
+    background-color: lightgreen;
+    border-radius: 20px;
+    grid-area: item3;
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.item-4 {
+    background-color: plum;
+    border-radius: 20px;
+    grid-area: item4;
+    grid-row: 2;
+    grid-column: 2 / span 3;
+
+
+}
+
+.item-5 {
+    background-color: wheat;
+    border-radius: 20px;
+    grid-area: item5;
+    grid-row: 3;
+    grid-column: 1 / span 4;
+
+
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+
+    <div class="grid">
+        <div class="item-1"></div>
+        <div class="item-2"></div>
+        <div class="item-3"></div>
+        <div class="item-4"></div>
+        <div class="item-5"></div>
+    </div>
+
+</body>
+</html>

@@ -16,26 +16,36 @@
   padding-top: 10px;
 }
 
-.ball {
+.ball-1,
+.ball-2,
+.ball-3 {
+  align-self: flex-end;
   width: 20px;
   height: 20px;
   background-color: rgb(161, 40, 191);
   border-radius: 20px;
-  animation: animate1 5s forwards ease-in-out;
-  align-self: flex-end;
+  animation: bounce 2s forwards ease-in-out infinite;
 }
-@keyframes animate1 {
-  5% {
-    align-self: flex-start;
+
+.dot-2 {
+  animation-delay: 3s;
+}
+.dot-3 {
+  animation-delay: 0.75s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: initial;
     background-color: rgb(161, 40, 191);
   }
 
   50% {
     background-color: turquoise;
+    transform: translate(0, -40px);
   }
 
   100% {
     background-color: rgb(161, 40, 191);
-    align-self: flex-end;
   }
 }
