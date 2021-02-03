@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24.1 Grid</title>
+    <link rel="stylesheet" href="css/normalize.css">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 1.2rem; 
+    text-align: center; 
+}
+
+.grid > div {
+    padding: 50px;
+}
+
+.header {
+    background-color: lightcoral;
+    border-radius: 20px;
+    grid-area: header;
+}
+
+.sidebar-1 {
+    background-color: lightskyblue;
+    border-radius: 20px;
+    grid-area: sidebar-1;
+}
+
+.mycontent {
+    background-color: lightgreen;
+    border-radius: 20px;
+    grid-area: mycontent;  
+}
+
+.sidebar-2 {
+    background-color: plum;
+    border-radius: 20px;
+    grid-area: sidebar-2;
+}
+
+.footer {
+    background-color: khaki;
+    border-radius: 20px;
+    grid-area: footer;
+}
+
+@media(min-width: 781px) {
+    .grid {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+    grid-template-areas:
+    'header header header header'
+    'sidebar-1 mycontent mycontent sidebar-2'
+    'sidebar-1 mycontent mycontent sidebar-2'
+    'sidebar-1 mycontent mycontent sidebar-2'
+    'footer footer footer footer';
+ }
+}
+
+@media(max-width: 780px) {
+    .grid {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+    grid-template-areas:
+    'header header header header'
+    'sidebar-1 mycontent mycontent mycontent'
+    'sidebar-1 mycontent mycontent mycontent'
+    'sidebar-2 sidebar-2 sidebar-2 sidebar-2'
+    'footer footer footer footer';
+ }
+}
+
+@media(max-width: 500px) {
+    .grid {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+    grid-template-areas:
+    'header header header header'
+    'sidebar-1 sidebar-1 sidebar-1 sidebar-1'
+    'mycontent mycontent mycontent mycontent'
+    'sidebar-2 sidebar-2 sidebar-2 sidebar-2'
+    'footer footer footer footer';  
+ }
+}
+
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+
+
+    <div class="grid">
+        <div class="header">Header</div>
+        <div class="sidebar-1">Sidebar</div>
+        <div class="mycontent">
+            <h1>Content</h1>
+            <p>Lorem ipsum dolor sit amet consectetur 
+            adipisicing elit. 
+            Modi, voluptatibus!</p>
+        </div>
+        <div class="sidebar-2">Sidebar 2</div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>
