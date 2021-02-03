@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Gallery</title>
+    <link rel="stylesheet" href="css/normalize.css">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+ 
+}
+
+
+@media(min-width: 500px) { 
+    .container {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+    grid-template-areas:
+    'image-1 image-1 image-2 image-2 image-2 image-3 image-4 image-4'
+    'image-1 image-1 image-2 image-2 image-2 image-3 image-4 image-4'
+    'image-5 image-5 image-2 image-2 image-2 image-8 image-8 image-9'
+    'image-5 image-5 image-6 image-6 image-7 image-8 image-8 image-9'
+    'image-5 image-5 image-6 image-6 image-13 image-13 image-13 image-9'
+    'image-10 image-11 image-11 image-12 image-13 image-13 image-13 image-14'
+    'image-10 image-11 image-11 image-12 image-13 image-13 image-13 image-14';
+ }
+}
+
+@media(max-width: 780px) {
+    .container {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+    grid-template-areas:
+    'image-1 image-1 image-2 image-2 image-2 image-3 image-4 image-4'
+    'image-1 image-1 image-2 image-2 image-2 image-3 image-4 image-4'
+    'image-5 image-5 image-2 image-2 image-2 image-8 image-8 image-9'
+    'image-5 image-5 image-6 image-6 image-7 image-8 image-8 image-9'
+    'image-5 image-5 image-6 image-6 image-13 image-13 image-13 image-9'
+    'image-10 image-11 image-11 image-12 image-13 image-13 image-13 image-14'
+    'image-10 image-11 image-11 image-12 image-13 image-13 image-13 image-14';   
+ }
+}
+
+@media(max-width: 500px) {
+    .container {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+    grid-template-areas:
+    'image-1 image-1 image-2 image-2 image-2 image-3 image-4 image-4'
+    'image-1 image-1 image-2 image-2 image-2 image-3 image-4 image-4'
+    'image-5 image-5 image-2 image-2 image-2 image-8 image-8 image-9'
+    'image-5 image-5 image-6 image-6 image-7 image-8 image-8 image-9'
+    'image-5 image-5 image-6 image-6 image-13 image-13 image-13 image-9'
+    'image-10 image-11 image-11 image-12 image-13 image-13 image-13 image-14'
+    'image-10 image-11 image-11 image-12 image-13 image-13 image-13 image-14';    
+ }
+}
+
+
+
+
+
+
+.image-1 {
+    margin: 5px;
+    grid-area: image-1;
+    
+}
+
+
+.image-2 {
+    margin: 5px;
+    grid-area: image-2;
+    
+}
+
+.image-3 {
+    margin: 5px;
+    grid-area: image-3;
+   
+}
+
+.image-4 {
+    margin: 5px;
+    grid-area: image-4;
+    object-fit: auto;
+    
+}
+
+.image-5 {
+    margin: 5px;
+    grid-area: image-5;
+
+}
+
+.image-6 {
+    margin: 5px;
+    grid-area: image-6;
+    
+}
+
+.image-7 {
+    margin: 5px;
+    grid-area: image-7;
+   
+}
+
+.image-8 {
+    margin: 5px;
+    grid-area: image-1;
+    
+}
+
+.image-1 {
+    margin: 5px;
+    grid-area: image-8;
+    
+}
+
+.image-9 {
+    margin: 5px;
+    grid-area: image-9;
+    
+}
+
+.image-10 {
+    margin: 5px;
+    grid-area: image-10;
+    
+}
+
+.image-11 {
+    margin: 5px;
+    grid-area: image-11;
+    
+}
+
+.image-12 {
+    margin: 5px;
+    grid-area: image-12;
+    
+
+}
+
+.image-13 {
+    margin: 5px;
+    grid-area: image-13;
+    width:auto;
+    
+}
+
+.image-14 {
+    margin: 5px;
+    grid-area: image-14;
+    
+    
+    
+}
+
+ 
+
+
+</style>
+
+</head>
+<body>
+ <div class="container">
+<!--
+-->
+    <img src="images/gal-1.jpeg" alt="image-1" class="image-1">
+    <img src="images/gal-2.jpeg" alt="image-2" class="image-2">
+    <img src="images/gal-3.jpeg" alt="image-3" class="image-3">
+    <img src="images/gal-4.jpeg" alt="image 4" class="image-4">
+    <img src="images/gal-5.jpeg" alt="image 5" class="image-5">
+    <img src="images/gal-6.jpeg" alt="image 6" class="image-6">
+    <img src="images/gal-7.jpeg" alt="image 7" class="image-7">
+    <img src="images/gal-8.jpeg" alt="image 8" class="image-8">
+    <img src="images/gal-9.jpeg" alt="image 9" class="image-9">
+    <img src="images/gal-10.jpeg" alt="image 10" class="image-10">
+    <img src="images/gal-11.jpeg" alt="image 11" class="image-11">
+    <img src="images/gal-12.jpeg" alt="image 12" class="image-12">
+    <img src="images/gal-13.jpeg" alt="image 13" class="image-13">
+    <img src="images/gal-14.jpeg" alt="image 14" class="image-14">
+
+
+
+ </div>
+
+</body>
+</html>
