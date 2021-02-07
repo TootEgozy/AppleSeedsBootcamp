@@ -1,0 +1,697 @@
+/* note: all pages have id's - everything else is in classes. */
+
+/*///////////////////////////////////////////////////////////////////////////////
+                             Utilety classes and varriables
+///////////////////////////////////////////////////////////////////////////////*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* font-size: 10px; */
+  border: 1px solid transparent;
+}
+
+:root {
+  /* page 0 titels */
+  --background-screen-color: rgb(158, 158, 158);
+  --page-0-title-color: rgb(0, 40, 202);
+  --page-0-main-title-font: "Cabin", sans-serif;
+  --page-0-main-title-font-weight: 200;
+  --page-0-main-title-shadow: -8px 8px 10px #333;
+  --page-0-seondary-title-font: "Tangerine", cursive;
+  --page-0-seondary-title-font-weight: 900;
+  --page-0-seondary-title-shadow: -4px 4px 5px #333;
+
+  --content-background-color: rgb(245, 245, 240);
+
+  --page-title-color: rgb(116, 163, 111);
+  --content-font: "Roboto", sans-serif;
+}
+
+/********************************/
+/* Background image definitions */
+/********************************/
+body {
+  background: url(img/wall-with-plants.png) no-repeat center center/cover;
+  width: 100vw;
+  height: fit-content;
+  top: 1;
+  left: 1;
+  position: relative;
+  background-attachment: fixed;
+  z-index: -1;
+  padding-bottom: 4rem;
+  padding-top: 0px;
+}
+/* a color modifier for the background image */
+body:before {
+  content: "";
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(158, 158, 158);
+  opacity: 0.3;
+  background-attachment: fixed;
+  position: absolute;
+  z-index: 0;
+}
+
+/* content general definitions */
+.all-content {
+  position: relative;
+  display: block;
+  height: fit-content;
+  width: 80vw;
+  background-color: var(--content-background-color);
+  margin: auto;
+  margin-top: 100vh;
+  border-radius: 20px;
+  font-family: var(--content-font);
+  padding: 7rem;
+  line-height: 2rem;
+  padding-bottom: 10vh;
+}
+
+#page-1-heading,
+#page-2-heading,
+#page-3-heading,
+#page-4-heading {
+  display: block;
+  width: fit-content;
+  color: var(--page-title-color);
+  font-size: 4rem;
+  margin-bottom: 6rem;
+  margin-top: 5rem;
+  margin-left: 5rem;
+  position: relative;
+}
+
+#page-1-heading::before,
+#page-2-heading::before,
+#page-3-heading::before,
+#page-4-heading::before {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 5rem;
+  box-shadow: 0px 0px 10px rgba(158, 150, 139, 0.5);
+  background: url(sprout-resized.png) no-repeat center center;
+  font-size: 4rem;
+  left: -5rem;
+  top: -2rem;
+  position: absolute;
+  z-index: 2;
+}
+
+#page-1 p,
+#page-2 p,
+#page-3 p,
+#page-4 p {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+#page-1 ul,
+#page-4 ul {
+  list-style-type: none;
+  font-size: 20px;
+  margin: 5rem;
+}
+/*///////////////////////////////////////////////////////////////////////////////
+                                Page 0
+///////////////////////////////////////////////////////////////////////////////*/
+
+#page-0 h1 {
+  position: absolute;
+  text-align: center;
+  display: block;
+  left: 20rem;
+  font-size: 10rem;
+  font-weight: var(--page-0-seondary-title-font-weight);
+  font-family: var(--page-0-seondary-title-font);
+  color: var(--page-0-title-color);
+  text-shadow: var(--page-0-seondary-title-shadow);
+  margin: 6rem;
+  margin-top: 11rem;
+  z-index: 2;
+  overflow: hidden;
+}
+
+#page-0 h2 {
+  position: absolute;
+  text-align: center;
+  display: block;
+  margin-left: 27vw;
+  top: 15vh;
+  margin-top: 7rem;
+  padding: 4rem;
+  font-size: 16rem;
+  font-weight: var(--page-0-main-title-font-weight);
+  font-family: var(--page-0-main-title-font);
+  color: var(--page-0-title-color);
+  text-shadow: var(--page-0-main-title-shadow);
+  z-index: 2;
+  overflow: hidden;
+}
+
+#page-0 .landing-page-arrow {
+  position: absolute;
+  display: block;
+}
+
+/***********************************************************/
+/*                   flower pot animation                 */
+/*********************************************************/
+
+/* A transparent box created only to position & attach the pseudo-
+elements that are the flower pots */
+#page-0 .flower-pot-animation {
+  position: absolute;
+  display: block;
+  top: 50vh;
+  left: 48vw;
+  z-index: 1;
+  background-color: transparent;
+  border-color: transparent;
+  height: 50px;
+  width: 50px;
+}
+
+#page-0 .flower-pot-animation::before {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 3;
+  top: -10vh;
+  left: -20vw;
+  opacity: 0;
+  background: url(flower-pot-1.png) no-repeat center center;
+  height: 30vh;
+  width: 20vw;
+  animation-name: flower-1;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flower-1 {
+  50% {
+    top: -10vh;
+    left: -35vw;
+    opacity: 0.3;
+  }
+
+  100% {
+    top: -10vh;
+    left: -35vw;
+    opacity: 1;
+  }
+}
+
+#page-0 .flower-pot-animation::after {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 3;
+  top: -10vh;
+  left: 15vw;
+  opacity: 0;
+  background: url(flower-pot-2-final.png) no-repeat center center;
+  height: 30vh;
+  width: 20vw;
+  animation-name: flower-2;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flower-2 {
+  50% {
+    top: -10vh;
+    left: 25vw;
+    opacity: 0.3;
+  }
+
+  100% {
+    top: -10vh;
+    left: 25vw;
+    opacity: 1;
+  }
+}
+
+/***********************************************************/
+/*                   Arrow Button                         */
+/*********************************************************/
+
+.landing-page-arrow {
+  display: block;
+  position: absolute;
+  font-size: 10rem;
+  text-decoration: none;
+  color: rgb(158, 150, 139);
+  opacity: 0.9;
+  text-shadow: -0.1px 0.1px 5px rgb(107, 90, 73);
+  top: 80vh;
+  left: 45vw;
+}
+
+.landing-page-arrow:hover {
+  display: block;
+  position: absolute;
+  font-size: 10rem;
+  text-decoration: none;
+  color: #bbb;
+  text-shadow: -2px 2px 10px rgb(255, 255, 255);
+  top: 80vh;
+  left: 45vw;
+}
+
+/***********************************************************/
+/*                    Menu                                */
+/*********************************************************/
+
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /* border-color: transparent; */
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: rgba(111, 101, 89, 0.6);
+  opacity: 0.8;
+  box-shadow: 2px 2px 10px rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hamburger middle line */
+
+.menu-wrap .hamburger > div {
+  position: relative;
+  flex: none;
+  width: 40px;
+  height: 4px;
+  border-radius: 20px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+/* Hamburger top & bottom lines */
+
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 40px;
+  height: 4px;
+  border-radius: 20px;
+  background: inherit;
+}
+
+/* Moves lines up & down */
+.menu-wrap .hamburger > div::before {
+  top: -15px;
+}
+.menu-wrap .hamburger > div::after {
+  top: 12px;
+}
+
+/* Amination */
+
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* turns lines into X */
+
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* show menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  opacity: 1;
+  transition: all 0.4 ease;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: 0.4s ease;
+}
+/* test */
+.menu-wrap .toggler:not(:checked) ~ .menu {
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  margin-top: 4rem;
+  margin-left: 0;
+  width: 12rem;
+  padding: 1rem;
+  /* border: 1px solid black; */
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgba(111, 101, 89, 0.8);
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div {
+  font-size: 20px;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 11rem;
+  max-height: 100vh;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: rgb(31, 66, 31);
+  line-height: 7rem;
+  font-size: 2rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  font-family: var(--content-font);
+  font-size: inherit;
+  font-weight: 700;
+  padding: 1.5rem;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li > a:hover {
+  color: white;
+  background-color: rgba(158, 150, 139, 0.5);
+}
+
+/*///////////////////////////////////////////////////////////////////////////////
+                                Page 1
+///////////////////////////////////////////////////////////////////////////////*/
+
+#page-1 {
+  height: 100vh;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////
+                                Page 2
+///////////////////////////////////////////////////////////////////////////////*/
+
+#page-2 {
+  height: 100vh;
+}
+
+.blog-links-frame {
+  width: 50vw;
+  height: 60vh;
+  position: absolute;
+  z-index: 2;
+  overflow: scroll;
+}
+
+.blog-sections-container a {
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  color: rgb(31, 66, 31);
+}
+
+.blog-btn {
+  position: absolute;
+  box-shadow: 0 0 10 #555;
+  width: fit-content;
+  bottom: 50%;
+  padding: 3rem;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////
+                                Page 3
+///////////////////////////////////////////////////////////////////////////////*/
+
+#page-3 {
+  height: 100vh;
+}
+
+#page-3 h4 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+.submit-btn {
+  position: relative;
+  margin: 50px;
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: rgb(31, 66, 31);
+  font-weight: bold;
+  font-size: 18px;
+  width: fit-content;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #333;
+}
+
+.submit-btn:active {
+  color: white;
+  box-shadow: 0px 0px 5px white;
+  background-color: rgba(189, 177, 177, 0.5);
+}
+
+/* Grid Gallery! */
+
+.container {
+  display: grid;
+  width: 50vw;
+  height: 50vh;
+  margin: 5px;
+}
+
+.container > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 781px) {
+  .container {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+    grid-template-areas:
+      "image-1 image-1 image-2 image-2 image-2 image-3 image-4 image-4"
+      "image-1 image-1 image-2 image-2 image-2 image-3 image-4 image-4"
+      "image-5 image-5 image-2 image-2 image-2 image-8 image-8 image-9"
+      "image-5 image-5 image-6 image-6 image-7 image-8 image-8 image-9"
+      "image-5 image-5 image-6 image-6 image-13 image-13 image-13 image-9"
+      "image-10 image-11 image-11 image-12 image-13 image-13 image-13 image-14"
+      "image-10 image-11 image-11 image-12 image-13 image-13 image-13 image-14";
+  }
+}
+
+@media (max-width: 780px) {
+  .container {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+    grid-template-areas:
+      "image-1 image-1 image-2 image-2"
+      "image-1 image-1 image-2 image-2"
+      "image-5 image-5 image-2 image-2"
+      "image-5 image-5 image-6 image-6"
+      "image-5 image-5 image-6 image-6"
+      "image-10 image-11 image-11 image-12 "
+      "image-10 image-11 image-11 image-12"
+      "image-9 image-9 image-14 image-4"
+      "image-7 image-13 image-8 image-3";
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+    grid-template-areas:
+      "image-1"
+      "image-2"
+      "image-3"
+      "image-4"
+      "image-5"
+      "image-6"
+      "image-7"
+      "image-8"
+      "image-9"
+      "image-10"
+      "image-11"
+      "image-12"
+      "image-13"
+      "image-14";
+  }
+}
+
+.image-1 {
+  margin: 5px;
+  grid-area: image-1;
+}
+
+.image-2 {
+  margin: 5px;
+  grid-area: image-2;
+}
+
+.image-3 {
+  margin: 5px;
+  grid-area: image-3;
+}
+
+.image-4 {
+  margin: 5px;
+  grid-area: image-4;
+}
+
+.image-5 {
+  margin: 5px;
+  grid-area: image-5;
+}
+
+.image-6 {
+  margin: 5px;
+  grid-area: image-6;
+}
+
+.image-7 {
+  margin: 5px;
+  grid-area: image-7;
+}
+
+.image-8 {
+  margin: 5px;
+  grid-area: image-1;
+}
+
+.image-1 {
+  margin: 5px;
+  grid-area: image-8;
+}
+
+.image-9 {
+  margin: 5px;
+  grid-area: image-9;
+}
+
+.image-10 {
+  margin: 5px;
+  grid-area: image-10;
+}
+
+.image-11 {
+  margin: 5px;
+  grid-area: image-11;
+}
+
+.image-12 {
+  margin: 5px;
+  grid-area: image-12;
+}
+
+.image-13 {
+  margin: 5px;
+  grid-area: image-13;
+}
+
+.image-14 {
+  margin: 5px;
+  grid-area: image-14;
+}
+
+[class*="image-"]:hover {
+  position: absolute;
+  z-index: 10;
+  transform: scale(1.2);
+}
+
+/*///////////////////////////////////////////////////////////////////////////////
+                                Page 4
+///////////////////////////////////////////////////////////////////////////////*/
+
+#page-4 {
+  height: 100vh;
+}
+
+#page-4 h4 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+#page-4 ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(31, 66, 31);
+  line-height: 25px;
+  display: block;
+  margin: 0.5rem;
+}
