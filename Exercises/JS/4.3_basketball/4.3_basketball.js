@@ -13,41 +13,48 @@
 // Submit the file to Hive.
 
 
-let john = {a:89, b:120, c:103};
-let mike = {a:116, b:94, c:123};
-let mary = {a:97, b:134, c:105};
-
-avrage = (player) => ((player.a + player.b + player.c)/3);
-
-function declareWinner() {
-
-    let avJohn = avrage(john);
-    let avMike = avrage(mike);
-    let avMary = avrage(mary);
-    
-    alert(avJohn);
-    alert(avMike);
-    alert(avMary);
-
-    if (avJohn > avMike) { 
-         if (avJohn > avMary) console.log(`John wins with the avrage score of ${avJohn}`);
-         else if (avJohn == avMary) console.log(`A tie between the winners John (${avJohn}) and Mary (${avMary})`);
-         else console.log(`Mary wins with the avrage score of ${avMary}`);
+function average(player) {
+    var result = 0;
+    for (i = 0; i < player.length; i++) {
+        result += player[i];
     }
-    else if (avJohn == avMike) {
-        if (avJohn == avMary) console.log(`A triple tie! All the players have an avrage score of ${avJohn}`);
-        else if (avJohn > avMary) console.log(`John wins with the avrage score of ${avJohn}`);
-        else console.log(`Mary wins with the avrage score of ${avMary}`);
+    return result / player.length;
+}
+
+let john = [89, 120, 103];
+let mike = [116, 94, 123];
+let mary = [97, 134, 105];
+
+let avJohn = average(john);
+let avMike = average(mike);
+let avMary = average(mary);
+
+console.log(`John's average: ${avJohn}`);
+console.log(`Mike's average: ${avMike}`);
+console.log(`Mary's average: ${avMary}`);
+
+[avJohn, avMike, avMary]
+
+
+if (avMike > avJohn) {
+    if (avMike > avMary) console.log(`Mike wins with the average score of ${avMike}`);  
+    else if (avMike == avMary) console.log(`A tie between the winners Mike (${avMike}) and Mary (${avMary})`);
+         else console.log(`Mary wins with the average score of ${avMary}`);
+}
+else {
+    if (avMike == avJohn) {
+        if (avMike > avMary) console.log(`A tie between the winners Mike (${avMike}) and John (${avJohn})`); 
+        else {
+          if (avMike == avMary) console.log(`A triple tie! All the players have an average score of ${avJohn}`);
+          else console.log(`Mary wins with the average score of ${avMary}`);
+        }
     }
-    else {
-        if (avMike > avMary) console.log(`Mike wins with the avrage score of ${avMike}`);
-        else if (avMike = avMary) console.log(`A tie between the winners Mike (${avMike}) and Mary (${avMary})`);
-        else console.log(`Mary wins with the avrage score of ${avMary}`);
+    else { 
+        if (avJohn > avMary) console.log(`John wins with the average score of ${avJohn}`);
+        else {
+            if (avJohn == avMary) console.log(`A tie between the winners John (${avJohn}) and Mary (${avMary})`);
+            else console.log(`Mary wins with the average score of ${avMary}`); 
+        }
     }
 }
 
-alert(declareWinner());
-
-// alert(avrage(john)); //104
-// alert(avrage(mike)); //111
-// alert(avrage(mary)); //112
