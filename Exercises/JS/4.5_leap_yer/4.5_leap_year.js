@@ -17,12 +17,12 @@ let year = prompt("Enter a year to check if it's a leap year:")
 function isLeap(year) {
     if (year % 4 == 0 && year != 0) {
         if (year % 100 == 0 ) {
-            if ( year % 400 == 0) console.log("It is indeed a leap year");
-            else console.log("I'ts not a leap year.");
+            return ( year % 400 == 0);
         }
-        console.log("It is indeed a leap year"); 
+        return true; 
     }
-    else console.log("I'ts not a leap year.");
+    else return false;
 }
 
-isLeap(year);
+if (isLeap(year)) console.log("It is indeed a leap year");
+else console.log("It's not a leap year");
