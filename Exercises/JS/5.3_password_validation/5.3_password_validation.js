@@ -42,7 +42,8 @@ validety3(password) && console.log("Strong");
 hasUpperCase = (str) => (/[A-Z]/).test(str);
 
 function validety4(password) {
-    if (hasUpperCase(password) && password.length >= 7) console.log("Strong");
-    else console.log("Weak");
+    if (hasUpperCase(password) && password.length >= 7) console.log("Very Strong");
+    else console.log("Not very strong");
 }
 
+validety4(password);
