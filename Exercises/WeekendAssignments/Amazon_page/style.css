@@ -1,0 +1,502 @@
+/*////////////////////////////////////////////////////////////////*/
+/*                        Utility classes                        */
+/*//////////////////////////////////////////////////////////////*/
+
+* {
+  font-family: "Amazon Ember";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.red-price {
+  font-size: 20px;
+  color: rgb(161, 6, 6);
+}
+
+/*/ ///////////////////////////////////////////////////////////////*/
+/*                        Navbar                        */
+/*//////////////////////////////////////////////////////////////*/
+.navbar {
+  width: 100%;
+}
+.navbar .top-navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: white;
+  background-color: #11161e;
+  padding: 5px;
+}
+
+.navbar .top-navbar > div {
+  display: block;
+  margin: 5px;
+}
+.logo {
+  width: fit-content;
+  margin-right: 10px;
+}
+
+.navbar .top-navbar > div > div {
+  display: block;
+  width: fit-content;
+}
+
+.navbar .search {
+  width: 1200px;
+  height: 2.5rem;
+  margin: 0;
+}
+
+.navbar .all-lable {
+  border-radius: 5px 0px 0px 5px;
+  padding: 0.75rem;
+  color: black;
+  margin: 0;
+  background-color: lightgray;
+}
+
+.navbar .magnify-lable {
+  border-radius: 0px 5px 5px 0px;
+  padding: 0.75rem;
+  color: black;
+  margin: 0;
+  background-color: rgb(250, 174, 32);
+}
+
+.navbar .middle-navbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #232f3e;
+  padding: 3px;
+}
+
+.navbar .middle-navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.navbar .middle-navbar ul li {
+  padding: 5px;
+  display: block;
+  font-size: 14px;
+  color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.navbar .middle-navbar ul :nth-child(7) {
+  padding: 5px;
+  display: block;
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  right: 6px;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.navbar .sign-in :nth-child(2) {
+  font-weight: bolder;
+  font-size: 13px;
+}
+
+.navbar .orders :nth-child(2) {
+  font-weight: bolder;
+  font-size: 13px;
+}
+
+.navbar .deliver-to :nth-child(2) {
+  font-weight: bolder;
+  font-size: 13px;
+}
+
+.navbar .cart :nth-child(1) {
+  font-weight: bolder;
+  font-size: 13px;
+  padding: 5px;
+}
+
+/*/ ///////////////////////////////////////////////////////////////*/
+/*                        Main Content AlignMent                */
+/*//////////////////////////////////////////////////////////////*/
+
+.main-content {
+  padding: 20px;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-areas:
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar ."
+    ". photos photos photos photos photos description description sidbar .";
+}
+
+.photo-predentation {
+  grid-area: photos;
+}
+
+.item-description {
+  grid-area: description;
+  position: relative;
+  width: 460px;
+}
+
+.item-description .visit {
+  line-height: 5rem;
+  color: darkgreen;
+  font-size: 18px;
+}
+
+.item-description .visit:hover {
+  line-height: 5rem;
+  color: darkred;
+  font-size: 18px;
+}
+
+.buying-and-contact-right {
+  grid-area: sidbar;
+  position: relative;
+}
+
+.ratings :nth-child(1) {
+  display: inline-block;
+}
+
+.ratings :nth-child(2) {
+  display: inline-block;
+  line-height: 2rem;
+  color: darkgreen;
+  font-size: 18px;
+}
+
+.ratings :nth-child(2):hover {
+  display: inline-block;
+  line-height: 2rem;
+  color: darkred;
+  font-size: 18px;
+}
+
+.ratings :nth-child(3) {
+  display: inline-block;
+  line-height: 2rem;
+  color: darkgreen;
+  font-size: 18px;
+}
+
+.ratings :nth-child(3):hover {
+  display: inline-block;
+  line-height: 2rem;
+  color: darkred;
+  font-size: 18px;
+}
+
+.price .price-details :nth-child(1) {
+  display: inline-block;
+}
+
+.price .price-details :nth-child(2) {
+  display: inline-block;
+  line-height: 2rem;
+  color: darkgreen;
+  font-size: 18px;
+}
+.price .price-details :nth-child(3) {
+  display: inline-block;
+  line-height: 2rem;
+  color: darkgreen;
+  font-size: 18px;
+}
+.price .price-details :nth-child(4) {
+  display: inline-block;
+  line-height: 2rem;
+  color: darkgreen;
+  font-size: 18px;
+}
+
+/* photo showcase */
+
+.photo-links {
+  position: relative;
+}
+
+.photo-links ul {
+  list-style: none;
+}
+
+.photo-links ul li {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.picture-1 {
+  background: url(front-speaker.png) no-repeat center center/cover;
+}
+
+.picture-1:hover {
+  background: url(front-speaker.png) no-repeat center center/cover;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px rgb(243, 146, 0);
+}
+
+.picture-2 {
+  background: url(frontside-speaker.png) no-repeat center center/cover;
+}
+
+.picture-2:hover {
+  background: url(frontside-speaker.png) no-repeat center center/cover;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px rgb(243, 146, 0);
+}
+
+.picture-3 {
+  background: url(side-speaker.png) no-repeat center center/cover;
+}
+
+.picture-3:hover {
+  background: url(side-speaker.png) no-repeat center center/cover;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px rgb(243, 146, 0);
+}
+
+.picture-4 {
+  background: url(sideback-speaker.png) no-repeat center center/cover;
+}
+
+.picture-4:hover {
+  background: url(sideback-speaker.png) no-repeat center center/cover;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px rgb(243, 146, 0);
+}
+
+.picture-5 {
+  background: url(back1-speaker.png) no-repeat center center/cover;
+}
+
+.picture-5:hover {
+  background: url(back1-speaker.png) no-repeat center center/cover;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px rgb(243, 146, 0);
+}
+
+.picture-6 {
+  background: url(back2-speaker.png) no-repeat center center/cover;
+}
+
+.picture-6:hover {
+  background: url(back2-speaker.png) no-repeat center center/cover;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px rgb(243, 146, 0);
+}
+
+.video-7 {
+  background: url(play.png) no-repeat center center/cover;
+}
+
+.video-7:hover {
+  background: url(play.png) no-repeat center center/cover;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px rgb(243, 146, 0);
+}
+
+.video-7::before {
+  content: "VIDEO";
+  position: absolute;
+  top: 410px;
+}
+
+.target-frame {
+  width: 500px;
+  height: 550px;
+  overflow: hidden;
+  border: hidden;
+  position: absolute;
+  left: 200px;
+}
+
+/* the right side-bar */
+
+.content-between-share-bars {
+  border: 1px solid lightgray;
+  width: 250px;
+  border-radius: 10px;
+  padding: 15px;
+  line-height: 1.5rem;
+}
+
+.content-between-share-bars a {
+  text-decoration: none;
+  color: darkgreen;
+}
+
+.content-between-share-bars a:hover {
+  text-decoration: none;
+  color: darkred;
+  cursor: pointer;
+}
+
+.qty-button {
+  font-size: 12px;
+  display: block;
+  width: fit-content;
+  padding: 1px 15px;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid rgb(172, 171, 171);
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px lightgray;
+}
+
+.content-between-share-bars :nth-child(2),
+.content-between-share-bars :nth-child(3),
+.content-between-share-bars :nth-child(4),
+.content-between-share-bars :nth-child(5),
+.content-between-share-bars :nth-child(8) {
+  margin-bottom: 2rem;
+}
+
+.arrives .bold {
+  font-weight: bolder;
+}
+
+.content-between-share-bars table {
+  font-size: 12px;
+  padding: 5px;
+}
+
+.content-between-share-bars td {
+  font-size: 12px;
+  padding: 5px;
+}
+
+.share2 ul {
+  list-style: none;
+  display: flex;
+  margin: 20px 0px;
+}
+
+.share2 ul li {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+.share2 ul :nth-child(1) {
+  text-align: left;
+  justify-content: center;
+  text-decoration: none;
+  color: darkgreen;
+}
+
+.share2 ul :nth-child(1):hover {
+  text-align: left;
+  justify-content: center;
+  text-decoration: none;
+  color: darkred;
+}
+
+.share2 ul :nth-child(2) {
+  background: url(share-mail.png) no-repeat center center/cover;
+}
+.share2 ul :nth-child(3) {
+  background: url(share-facebook.png) no-repeat center center/cover;
+}
+.share2 ul :nth-child(4) {
+  background: url(share-twitter.png) no-repeat center center/cover;
+}
+.share2 ul :nth-child(5) {
+  background: url(share-pinterast.png) no-repeat center center/cover;
+}
+
+/* gift card */
+
+.gift-card-w-img {
+  background: url(tilted-a.png) no-repeat right bottom;
+  line-height: 2rem;
+  border: 1px solid lightgray;
+  width: 250px;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.gift-card-w-img a {
+  text-decoration: none;
+  color: darkgreen;
+}
+
+.gift-card-w-img a:hover {
+  text-decoration: none;
+  color: darkred;
+}
+
+.gift-card-w-img .trade-in-btn {
+  font-size: 14px;
+  display: block;
+  width: fit-content;
+  padding: 1px 15px;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid rgb(172, 171, 171);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px lightgray;
+}
+
+.gift-card-w-img .trade-in-btn:hover {
+  font-size: 14px;
+  display: block;
+  width: fit-content;
+  padding: 1px 15px;
+  background-color: rgb(201, 199, 199);
+  border: 1px solid rgb(172, 171, 171);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px lightgray;
+}
+
+.sell {
+  padding-left: 60px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.sell p {
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+.sell-btn {
+  font-size: 16px;
+  display: block;
+  width: fit-content;
+  padding: 5px 20px;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid rgb(172, 171, 171);
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px lightgray;
+}
+
+.sell-btn:hover {
+  font-size: 16px;
+  display: block;
+  width: fit-content;
+  background-color: rgb(201, 201, 201);
+  border: 1px solid rgb(172, 171, 171);
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px lightgray;
+}
