@@ -155,6 +155,19 @@ school.assignTeacherSubject = function(teacherID, subject) {
 
 // 4. Create a new method of anything you want.
 
+school.isStudentOf = function(studentID, teacherID) {
+    let teacherObject = this.findPerson("teacher", teacherID);
+    let result = false;
+
+    function callbackIsStudent(studentObject) {
+        if (studentObject.id === studentID) result = true;
+    }
+
+    teacherObject.students.forEach(callbackIsStudent);
+
+    return result;
+}
+
 school.fireTeacher = function(teacherID) {
     let teacherIndex = -1;
 
@@ -173,3 +186,90 @@ console.log(school.teachers);
 // console.log(school.findPerson("teacher", 3));
 
 
+//5. expel a student: add a method to remove a student from the array of students and from the teacher's students.
+
+//assisting function - find teachers with students
+school.findTeachersWithStudent = function(studentID) {
+    let result = [];
+
+    //function callbackFindTechers(teacherObject) {
+    //    if (this.isStudentOf(studentID, teacherObject.id)) {
+    //        result.push(teacherObject.id);
+    //    }
+    //}
+    //this.teachers.forEach(callbackFindTechers);
+
+    for (i = 0; i < this.teachers.length; i++) {
+        if (this.isStudentOf(studentID, this.teachers[i].id))
+            result.push(this.teachers[i].id);
+    }
+
+    return result;
+}
+
+//remove a student from a teacher
+school.removeStudentFromTeacher = function (studentID, teacherID) {
+    let teacherObject = this.findPerson("teacher", teacherID);
+    //console.log("removeStudentFromTeacher");
+    //console.log("studentID = "+studentID);
+    //console.log("teacherID = "+teacherID);
+    for(i = 0; i < teacherObject.students.length; i++) {
+        if (teacherObject.students[i].id === studentID) {
+            teacherObject.students.splice(i, 1);
+            teacherObject.capacityLeft++;
+        }
+    }
+}
+
+school.assignStudent = function(studentID,subject) {
+    let potentialTeachers = this.findTeachersWithSubject(subject);
+    let teacherFound = false;
+    let studentObj = this.findPerson("student", studentID);
+    let teacherName = "";
+
+    for (i = 0; i < potentialTeachers.length; i++) {
+        if (potentialTeachers[i].capacityLeft > 0 && !teacherFound) {
+            teacherFound = true;
+            potentialTeachers[i].students.push(studentObj);
+            potentialTeachers[i].capacityLeft--;
+            teacherName = potentialTeachers[i].name;
+        }
+    }
+}
+
+school.expelStudent = function (studentID) {
+
+    //deletes a student from all of its teachers
+    let teachersWithStudent = this.findTeachersWithStudent(studentID);
+
+    //console.log(teachersWithStudent);
+
+    //function callbackRemoveStudentFromTeacher(teacherID) {
+    //    this.removeStudentFromTeacher(teacherID, studentID);
+    //}
+    //teachersWithStudent.forEach(callbackRemoveStudentFromTeacher);
+
+    for (i = 0; i < teachersWithStudent.length; i++) this.removeStudentFromTeacher(studentID,teachersWithStudent[i]);
+    
+    //delete a student from the students main array
+    let studentIndex =-1;
+    for(i = 0; i < this.students.length; i++){
+        if (this.students[i].id === studentID) {
+            studentIndex = i;
+        }
+    }
+    if (studentIndex > -1) this.students.splice(studentIndex, 1);
+}
+
+// console.log("______________________");
+// console.log(school.isStudentOf(12, 3));
+// console.log(school.isStudentOf(10, 3));
+
+console.log("------------------------------------");
+console.log("------------------------------------");
+console.log(school.students);
+console.log(school.findPerson("teacher", 3));
+console.log("*********************");
+school.expelStudent(12);
+console.log(school.students);
+console.log(school.findPerson("teacher", 3));
