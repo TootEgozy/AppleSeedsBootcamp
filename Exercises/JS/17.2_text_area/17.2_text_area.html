@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.2 text area </title>
+    <style>
+
+        .lable {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            display:list-item;
+            margin-top: 50px;;
+            padding: 0rem 2rem;
+        }
+
+        .text-box {
+            margin: 1rem;
+            padding: 0.5rem;
+            display: inline;
+            width: 25rem;
+            height: 10rem;
+            text-overflow: scroll;
+            box-sizing: border-box;
+            resize: none;
+           
+        }
+        .submit {
+            top: 10px;
+            position: relative;
+            left: -420px;
+        }
+        .error {
+            position: relative;
+            display: inline-block;
+            left: -410px;
+            top: 10px;
+            font-size: smaller;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <label class="lable" title="100 chars at least" for="text-box">Why are you interasted in this position?</label>
+    <textarea class="text-box" rows="6" type="text"></textarea>
+    <button class="submit" onclick="myFunction()">submit</button>
+    <p class="error"></p>
+
+    
+    <script src="17.2.js"></script>
+</body>
+</html>
