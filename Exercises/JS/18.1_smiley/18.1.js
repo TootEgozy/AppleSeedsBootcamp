@@ -30,7 +30,9 @@ function handleInput () {
         //     myPFragment.classList.add('.error'); this doesnwt work. why?
         //     inputFiled.classList.add('.error');
         document.body.insertAdjacentElement('afterend', myP);
-        inputFiled.style.border = "2px solid red";
+        // inputFiled.style.border = "2px solid red";
+        inputFiled.classList.add('.error');
+        console.log(inputFiled.classList);
     }
 }
 
