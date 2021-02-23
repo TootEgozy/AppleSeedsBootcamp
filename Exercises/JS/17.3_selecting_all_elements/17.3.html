@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.3</title>
+    
+</head>
+<body>
+    <div id="myFirstDiv">one</div>
+    <div id="mySecondDiv">two</div>
+    <div id="myThridDiv">three</div>
+    <div id="myFourthDiv">four</div>
+
+    <script>
+        let divList = document.querySelectorAll('div');
+        let divs = {};
+        for (i=0; i<divList.length; i++) divs[divList[i].id] = divList[i];
+        console.log(divs);
+    </script>
+</body>
+</html>
