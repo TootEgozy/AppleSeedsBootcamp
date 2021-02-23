@@ -7,8 +7,8 @@
 // var documentFragment = range.createContextualFragment(tagString);
 // document.body.appendChild(documentFragment);
 
-let pic1Src = `https://picsum.photos/400`;
-let pic2Src = `https://picsum.photos/400`;
+let pic1Src = `https://picsum.photos/400?randome=1`;
+let pic2Src = `https://picsum.photos/400?randome=2`;
 let picWidth = "300";
 let myHTML =`
 <h1>Hello World!</h1>
