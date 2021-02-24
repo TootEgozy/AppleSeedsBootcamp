@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21.1 age</title>
+  <style>
+      * {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      .age {
+          width: 100px;
+          height: 25px;
+          position: relative;
+          left: 10%;
+      }
+      .wrapper {
+          padding: 40px;
+          position: relative;
+          left: 45%;
+          top:20%;
+          width: fit-content;
+          box-shadow: 0px 0px 10px violet;
+          display: grid;
+      }
+
+      .ok {
+          color: rgb(223, 112, 223);
+          font-size: 30px;
+          position: relative;
+          left: 40%;
+          height: 1rem;
+      }
+      .no {
+        color: red;
+        font-size: 30px;
+        position: relative;
+        left: 40%;
+        height: 1rem;
+      }
+      .submit {
+          position: relative;
+          margin-top: 20px;
+          width: fit-content;
+          left:25%;
+      }
+
+
+  </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h3>Enter your age:</h3>
+        <input type="number" maxlength="3" min="1" class="age">
+        <button class="submit">Submit</button>
+    </div>
+
+    <script>
+
+        let button = document.querySelector(".submit");
+        let ageBox = document.querySelector(".age");
+        let wrapper = document.querySelector(".wrapper");
+        
+        let no = document.createElement('p');
+        document.body.insertAdjacentElement('afterend', no);
+        no.classList.add("no");
+
+        let ok = document.createElement('p');
+        document.body.insertAdjacentElement('afterend', ok);
+        ok.classList.add("ok");
+
+        function clickReact () {
+
+            if (ageBox.value < 18) {
+                no.textContent = "👶 You're too young";
+                ok.textContent = "";
+            }
+            else {
+                ok.textContent = "👍 You can drink beer"; 
+                no.textContent = "";
+            }
+        }
+
+        button.addEventListener('click', clickReact);
+
+
+
+    </script>
+</body>
+</html>
