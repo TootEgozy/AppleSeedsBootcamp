@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19.2</title>
+<style>
+    body {
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .wrapper {
+        border: 2px solid gray;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 500px;
+        height: 200px;
+        box-shadow: 0px 0px 10px lightgray;
+        padding-left: 5rem;
+    }
+
+    .wrapper :nth-child(1),
+    .wrapper :nth-child(2),
+    .wrapper :nth-child(3),
+    .wrapper :nth-child(4),
+    .wrapper :nth-child(5),
+    .wrapper :nth-child(6) {
+        width: 50px;
+        height:50px;
+        margin: 10px;
+        margin-top: 50px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        font-size: 25px;
+        text-align: center;
+    }
+    .verify-btn {
+        background-color: black;
+        color:white;
+        align-self: flex-end;
+        position: relative;
+        right: 55%;
+        bottom: 15%;
+        font-size: 25px;
+        padding:5px;
+    }
+    .red {
+        color: red;
+        font-size: 50px;
+    }
+
+</style>
+</head>
+<body>
+<h1>Text to Copy:</h1>
+<h2>123456</h2>
+<div class="wrapper">
+    <input  type="text" maxlength ="1" class="input-1">
+    <input  type="text" maxlength ="1" class="input-2">
+    <input  type="text" maxlength ="1" class="input-3">
+    <input  type="text" maxlength ="1" class="input-4">
+    <input  type="text" maxlength ="1" class="input-5">
+    <input  type="text" maxlength ="1" class="input-6">
+
+    <button class="verify-btn">Verify</button>
+</div>
+
+
+<script>
+/* work flow:
+
+2. submitter - a function that recives true / false for each input, and if all true, "submit" - meaning deleting all of the input.
+3. subChecker - a function that checks if an input filed is full, and if so, moves the focus to te next one.
+    if the next one if full, moves the focus to the one after.
+4. a trigger for a pasting event that starts subChecker
+5. a trigger for a click event on the submit button that starts subChecker
+6. a limiter that limits the input to 1 char
+*/
+let wrapper = document.querySelector(".wrapper");
+
+let inputArr = [];
+
+inputArr[0] = document.querySelector(".input-1");
+inputArr[1] = document.querySelector(".input-2");
+inputArr[2] = document.querySelector(".input-3");
+inputArr[3] = document.querySelector(".input-4");
+inputArr[4] = document.querySelector(".input-5");
+inputArr[5] = document.querySelector(".input-6");
+
+let button = document.querySelector(".verify-btn");
+
+let submitText = document.createElement('p');
+wrapper.insertAdjacentElement("afterend", submitText);
+submitText.classList.add("red");
+
+
+//Check if all input fields are full and if so, clear them
+function submit () {
+    let allFilled = true;
+    //For each input field check if its full, if so, push 1 into the result array
+
+    function checkFilled (inputField) {
+        if (inputField.value.length == 0) allFilled=false;
+    }
+
+    function eraseValue (inputField) {
+        inputField.value = "";
+    }
+    
+    inputArr.forEach(checkFilled);
+    
+    //If the result array length is 6, "submit" - clear input fields
+    if (allFilled) {
+        inputArr.forEach(eraseValue);
+        submitText.innerHTML = "Submitted successfully!";
+        console.log(submitText);
+    } else {
+        submitText.innerHTML = "";
+    }
+}
+
+function input_incr(num) {
+    if (num>=inputArr.length-1) return 0;
+    else return num+1;
+}
+
+//If the input field is full, move the focus to next field, blur current field
+function moveFocus (e) {
+    if (e.target.nextElementSibling) {
+        e.target.nextElementSibling.focus();
+        if (e.target.nextElementSibling.value.length > 0)
+            e.target.nextElementSibling.select(); 
+        submit();
+    }
+}
+
+function handlePaste(e) {
+    let paste = (e.clipboardData || window.clipboardData).getData('text');
+    let fields = paste.split("");
+    let currentField = e.target;
+
+    for (i=0; i<paste.length && currentField; i++) {
+        currentField.value = fields[i];
+        currentField = currentField.nextElementSibling;
+    }
+}
+
+function autoSelect(e) {
+    if (e.target.value.length > 0)
+        e.target.select();
+}
+
+inputArr[0].focus();
+//Adding event listener to each field for focus
+for (i=0;i<inputArr.length;i++) inputArr[i].addEventListener('input',moveFocus);
+//attaching the submit function to the button
+button.addEventListener('click', submit);
+//attach paste listener
+//inputArr[0].addEventListener('paste',handlePaste);
+for (i=0;i<inputArr.length;i++) inputArr[i].addEventListener('paste',handlePaste);
+
+for (i=0; i<inputArr.length;i++) inputArr[i].addEventListener('click',autoSelect);
+
+/*
+field1.addEventListener('input', moveFocus(field1));
+field2.addEventListener('input', moveFocus(field2));
+field3.addEventListener('input', moveFocus(field3));
+field4.addEventListener('input', moveFocus(field4));
+field5.addEventListener('input', moveFocus(field5));
+field6.addEventListener('input', moveFocus(field6));
+*/
+
+
+
+</script>
+</body>
+</html>

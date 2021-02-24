@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 Cardio</title>
+<style>
+    .cards {
+        display:grid;
+        background: wheat;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap:30px;
+        padding: 30px;
+        
+    }
+    .playerCard {
+        background: white;
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 200px;
+    }
+</style>
+</head>
+<body>
+<script>
+    //make a div
+    let div = document.createElement('div');
+    //add a class of wrapper to it
+    div.classList.add("wrapper");
+    //put it into the body
+    document.body.appendChild(div);
+    //make an unorderd list
+   
+    //add three list items with the words "one, two, three" in them
+    let ul =`   <ul> 
+                    <li>One</li>
+                    <li>Two</li>
+                    <li>Three</li>
+                </ul>`;
+    //put that list into the above wrapper
+    div.innerHTML = ul;
+    //create an image
+    let img = document.createElement('img');
+    //set a source to that image
+    img.src = `https://picsum.photos/${250}`
+    //set the width to 250
+    //add a class of cute
+    img.classList.add("cute");
+    //add an alt of cute puppy
+    img.alt = "cute puppy";
+    //append that image to the wrapper
+    div.appendChild(img);
+    //with HTML string, make a div, with two paragraphs inside of it
+    let myHTML =`<div>
+                    <p>paragraph</p>
+                    <p>paragraph</p>
+                </div>`;
+    //put this div before the unorderd list from above
+    let ulElement = div.querySelector(`ul`);
+    ulElement.insertAdjacentHTML('beforebegin', myHTML);
+    //add a class to the second paragraph called warning
+   let myDiv = div.firstElementChild;
+    let secondP = myDiv.firstElementChild.nextElementSibling;
+    secondP.classList.add("warning");
+    console.log(secondP.classList);
+    //remove the first paragraph
+    myDiv.firstElementChild.remove();
+    //create a function called generatePlayerCard that takes 
+    //three arguments: name, age and height
+    function generatePlayerCard(name, age, height) {
+        return anHTML =`
+        <div class="playerCard">
+            <h2>${name} - ${age}</h2>
+            <p>They are ${height} cm and ${age} years old.
+            In dog years this person would be ${age * 7} y/o.
+            that would be a tall dog! </p>
+            <button class="delete" type="button">&times; Delete</button>
+        </div>`;
+    }
+    //have that function return HTML that looks like this:
+    //<div class="playerCard">
+    //  <h2>Name - Age </h2>
+    //  <p> they are HIGHT and AGE years old. in dog years
+    // this person would be AGEINDOGYEARS. that would be a tall dog!</p>
+    // </div>
+
+    //make a new div with a class of cards
+    let cards = document.createElement('div');
+    cards.classList.add("cards");
+    //have that function make 4 cards
+    let cardsHTML = generatePlayerCard("Johnny", 20, 180);
+    cardsHTML += generatePlayerCard("Johanna", 30, 165);
+    cardsHTML += generatePlayerCard("Tommy", 10, 140);
+    cardsHTML += generatePlayerCard("Lily", 6, 110);
+
+    //append those cards to the div
+    cards.innerHTML = cardsHTML;
+    //put the div onto the dom just before the wrapper element
+    div.insertAdjacentElement('beforebegin', cards);
+    //put a delete button on each card so when you click it, 
+    //the whole card is removed!
+    let buttons = document.querySelectorAll(".delete");
+
+    function callbackForEach (button) {
+        button.addEventListener('click', removeCard);
+    }
+
+    function removeCard (e) {
+        e.target.parentElement.remove();
+    }
+
+    buttons.forEach(callbackForEach);
+
+
+</script>
+</body>
+</html>
