@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21.2</title>
+
+</head>
+<body>
+<script>
+    const users = [
+{
+id: 167464,
+firstName: "Jimmy",
+lastName: "Arnold",
+email: "jimmya@gmail.com",
+},
+{
+id: 578447,
+firstName: "Martha",
+lastName: "Goldman",
+email: "gold@hotmail.com",
+},
+{
+id: 864578,
+firstName: "Tim",
+lastName: "Burton",
+email: "timmy.hotmail.com",
+},
+];
+
+
+let ul = document.createElement('ul');
+document.body.appendChild(ul);
+ul.style.listStyle = "none";
+
+function createLi (prop) {
+let fullName = prop.firstName+" "+prop.lastName;
+let li = document.createElement('li');
+li.dataset.id = prop.id;
+li.innerHTML = fullName;
+ul.appendChild(li);
+console.log(li);
+}
+
+users.forEach(createLi);
+
+</script>
+</body>
+</html>
