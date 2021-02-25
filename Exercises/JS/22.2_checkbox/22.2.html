@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22.2 Checkbox</title>
+    <style>
+        .checkbox {
+          width: 50px;
+          height:50px;
+          position: relative;
+          top: 50px;
+          left:50px;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" class="checkbox">
+    <div class="image"></div>
+
+    <script>
+        let checkbox = document.querySelector(".checkbox");
+        let imgDiv = document.querySelector(".image");
+        let pic = document.createElement('img');
+        
+        let isPicFlag = false;
+
+        function handleClick (e) {
+            if(e.target.checked && isPicFlag == false) {
+                pic.src = "https://picsum.photos/500";
+                pic.style.marginTop = "50px";
+                document.body.insertAdjacentElement('beforeend', pic);
+                isPicFlag = true;
+
+            }
+            else {
+                pic.remove();
+                isPicFlag = false;
+            }
+        }
+
+
+        checkbox.addEventListener('click', handleClick);
+    </script>
+</body>
+</html>
