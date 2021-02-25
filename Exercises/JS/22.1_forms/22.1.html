@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22.1 forms</title>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+
+        .wrapper > input {
+            width: 250px;
+            height: 30px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        button {
+            width: fit-content;
+            padding: 7px;
+            margin-left: 80px;
+            background-color: thistle;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h3>Please enter your name:</h3>
+        <input type ="text" class="name" maxlength="20">
+        <h3>Please enter your age:</h3>
+        <input type ="number" min="1" maxlength="3" class="age">
+        <h3>Please enter your email:</h3>
+        <input type="email" class="email">
+        <button type="submit" class="submit">Submit</button>
+    </div> 
+
+    <script>
+        let name = document.querySelector(".name");
+        let age = document.querySelector(".age");
+        let email = document.querySelector(".email");
+        let submit = document.querySelector(".submit");
+        
+        let textFlag = false; 
+
+        function confirmSubmit(e) {
+            let text = `You have enterd:
+            name: ${name.value}, 
+            age: ${age.value}, 
+            email: ${email.value}. 
+            Do you wish to submit?`
+
+            if (confirm(text)) {
+                if(textFlag == false) {
+                    let okText = document.createElement('p');
+                    okText.innerHTML = `Submitted successfully!`;
+                    okText.style.fontSize = "20px";
+                    okText.style.color = "plum";
+                    submit.insertAdjacentElement('afterend', okText);
+                    textFlag = true;
+                }
+            }
+        }
+
+        submit.addEventListener('click', confirmSubmit);
+
+
+
+
+
+    </script>
+</body>
+</html>
