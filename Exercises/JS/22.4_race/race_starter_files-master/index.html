@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Race 🏎</title>
+    <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="banner">
+      <h1 class="text-center">Race</h1>
+    </div>
+    <hr />
+    <!-- You race HTML code here -->
+    <table class="racer-table">
+      <tr id="player1-race">
+        <td class="active"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="finish"></td>
+      </tr>
+      <tr id="player2-race">
+        <td class="active"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="finish"></td>
+      </tr>
+    </table>
+    <hr />
+
+    <script>
+      let car1 = document.querySelector("#player1-race");
+      let car2 = document.querySelector("#player2-race");
+      let car1positions = car1.querySelectorAll("td");
+      let car2positions = car2.querySelectorAll("td");
+      let car1Position = 0;
+      let car2Position = 0;
+
+      //winner is a flag for running the race functions
+      let winner = 0;
+      let announcement = document.createElement('p');
+      announcement.style.color = "green";
+      announcement.style.fontSize = "20px";
+      
+      function moveCar1 () {
+        if (car1Position < 11) {
+            car1positions[car1Position].classList.remove("active");
+            car1Position++;
+            car1positions[car1Position].classList.add("active");  
+        }
+        if (car1Position == 11 && winner == 0) {
+          winner = 1;
+          announcement.innerHTML = `Player ${winner} wins!`;
+          document.body.insertAdjacentElement('beforeend', announcement);
+        }
+      }
+
+      function moveCar2 () {
+        if (car2Position < 11 && winner == 0) {  
+            car2positions[car2Position].classList.remove("active");
+            car2Position++;
+            car2positions[car2Position].classList.add("active");
+        }
+        if (car2Position == 11) {
+          winner = 2;
+          announcement.innerHTML = `Player ${winner} wins!`;
+          document.body.insertAdjacentElement('beforeend', announcement);  
+        }
+      }
+
+      // moveCar1();
+      // moveCar2();
+
+      function handleKey (e) {
+        // run until someone wins 
+        if (winner == 0) {
+          if (e.keyCode == '39') {
+            moveCar1();
+          }
+          else if (e.keyCode == '68') {
+            moveCar2();
+          }
+        }
+        //someone won
+        else {
+          if (document.getElementById('restart-btn') == null) {
+            let restartBtn = document.createElement('button');
+            restartBtn.innerHTML = "Restart?";
+            restartBtn.style.padding = "10px";
+            restartBtn.id = 'restart-btn';
+            document.body.insertAdjacentElement('beforeend', restartBtn); 
+
+            function restartgame () {
+              location.reload();
+            }
+
+            restartBtn.addEventListener('click', restartgame);
+          }
+        }
+      }
+
+      window.addEventListener('keyup', handleKey);
+
+    </script>
+  </body>
+</html>
