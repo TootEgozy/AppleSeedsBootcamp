@@ -12,8 +12,8 @@ const rightArr = ["Hey", "my", "NAMe", "is", "toot"];
 const wrongArr = ["my", "AGe", "is", 26, "years"];
 
 function makeAllCaps(arr) {
-    const capPromise = new Promise(function(resolve, reject) {
-        resolve (arr.join("").toUpperCase().split(""));
+    return capPromise = new Promise(function(resolve) {
+        resolve (arr.join(" ").toUpperCase().split(" "));
     }  
 )};
 
@@ -27,23 +27,37 @@ function sortAndCheck (arr) {
             if (typeof (word) !== "string") result = false; 
         });
 
-        if(result == true) resolve (sortedArr);
-        else reject (arr);
+        if(result == true) resolve(sortedArr);
+        else reject(arr);
     })
 }
 
-// makeAllCaps(["Hey", "my", "NAMe", "is", "toot"])
-//     .then(function(arr) {
-//     sortAndCheck(arr)
-//     .then(function (arr) {
-//         console.log(`${arr} is all words!`)})
-//         .catch(function(arr) {
-//             console.log(`${arr} includes items that are not words!`)
-//         })
-// });
+makeAllCaps(rightArr)
+    .then(function(arr) {
+        sortAndCheck(arr)
+    .then(function (arr) {
+        console.log(`${arr} is all words!`)})
+    .catch(function(arr) {
+            console.log(`${arr} includes items that are not words!`)
+       })
+ });
+
+makeAllCaps(wrongArr)
+    .then(function(arr) {
+        sortAndCheck(arr)
+    .then(function (arr) {
+        console.log(`${arr} is all words!`)})
+    .catch(function(arr) {
+            console.log(`${arr} includes items that are not words!`)
+       })
+ });
+
+
+
+
 
 callbackThen = function() {console.log("Works")};
 callbackCatch = function() {console.log("Error")};
 
-makeAllCaps(rightArr).then(callbackThen).catch(callbackCatch);
+
 
