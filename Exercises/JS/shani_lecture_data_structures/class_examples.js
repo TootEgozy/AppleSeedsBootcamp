@@ -46,7 +46,35 @@ class Person {
 let toot = new Person("Toot",26);
 let naama = new Person("Naama",66,6,1);
 
+naama.last_interaction = "hostile";
+naama.last_interaction = "hostile";
+naama.last_interaction = "hostile";
+naama.last_interaction = "hostile";
+naama.last_interaction = "hostile";
+naama.last_interaction = "hostile";
+
+
 console.log(toot);
 console.log(naama);
+
+
 console.log(Person.equals(toot,naama));
+
+Person.prototype.getMoodAndDescription = function() {
+    let result = this.description + " and " + this.mood;
+    return result;
+}
+
+Person.prototype.sexAppeal = "super sexy";
+
+shimon = new Person("Shimon",33);
+
+//console.log(toot.getMoodAndDescription());
+
+//Object.prototype.blabla = 55;
+//console.log(toot.blabla);
+
+//console.log(shimon);
+//console.log("Shimons sex appeal: "+shimon.sexAppeal);
+
 
