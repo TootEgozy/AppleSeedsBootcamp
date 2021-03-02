@@ -12,50 +12,41 @@ const rightArr = ["Hey", "my", "NAMe", "is", "toot"];
 const wrongArr = ["my", "AGe", "is", 26, "years"];
 
 function makeAllCaps(arr) {
-    return capPromise = new Promise(function(resolve) {
-        resolve (arr.join(" ").toUpperCase().split(" "));
+    return new Promise(function(resolve, reject) {
+        let result = true;
+     
+
+        for(i = 0; i < arr.length; i++) {
+            if (typeof(arr[i]) !== "string") result = false;
+        }
+
+        if (result == true) {
+            resolve (arr.join(" ").toUpperCase().split(" "));
+          } else {
+                reject (arr);
+          }
     }  
 )};
 
 
 function sortAndCheck (arr) {
-    return sortCheckPromis = new Promise(function(resolve, reject) {
-        let result = true;
-        
-        sortedArr = arr.sort();
-        sortedArr.forEach(word => {
-            if (typeof (word) !== "string") result = false; 
-        });
+    return new Promise(function(resolve) {
 
-        if(result == true) resolve(sortedArr);
-        else reject(arr);
+    resolve(arr.sort());
     })
 }
 
-makeAllCaps(rightArr)
-    .then(function(arr) {
-        sortAndCheck(arr)
-    .then(function (arr) {
-        console.log(`${arr} is all words!`)})
-    .catch(function(arr) {
-            console.log(`${arr} includes items that are not words!`)
-       })
- });
-
+ makeAllCaps(rightArr)
+    .then(arr => sortAndCheck(arr))
+    .then(arr => console.log(`[${arr}] is all words!`))
+    .catch(arr => console.log(`[${arr}] includes items that are not words!`));
+    
+ 
 makeAllCaps(wrongArr)
-    .then(function(arr) {
-        sortAndCheck(arr)
-    .then(function (arr) {
-        console.log(`${arr} is all words!`)})
-    .catch(function(arr) {
-            console.log(`${arr} includes items that are not words!`)
-       })
- });
-
-
-
-
-
+    .then(arr => sortAndCheck(arr))
+    .then(arr => console.log(`[${arr}] is all words!`))
+    .catch(arr => console.log(`[${arr}] includes items that are not words!`));
+    
 callbackThen = function() {console.log("Works")};
 callbackCatch = function() {console.log("Error")};
 
