@@ -12,5 +12,4 @@ function handleError (err) {
     console.log(`Oh no! an error`+err);
 }
 
-getPersonObject().then();
 
