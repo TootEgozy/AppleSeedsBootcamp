@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        table {
+            /* width: 700px;
+            height: 500px; */
+            background-color: powderblue;
+        }
+
+        .heading {
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<script>
+//task 1: 
+//get the following information for 10 characters:
+//name, height, hair color, home planet, planet population.
+//this should be stored as an array of objects.
+//note that the home planet is also an object.
+
+
+//build an async function to conatin everything,
+//so I can use the data.
+
+async function createStarWarsTable () {
+
+    const peopleArr = [];
+    const planets = [];
+    const starWarsEndPoint = `https://swapi.dev/api`;
+
+        //a loop to fill peopleArr character objects
+         for(i = 1; i < 11; i++) {
+            const response = await fetch(`${starWarsEndPoint}/people/${i}/`);
+            const data = await response.json();
+            peopleArr.push(data);
+        }
+    
+        //a loop planets with the links
+        peopleArr.forEach(person => {
+            planets.push(person.homeworld);
+        })
+
+        //loop over planets to get planet objects
+        for(i = 0; i < planets.length; i++) {
+            const planetResponse = await fetch(planets[i]);
+            const planetData = await planetResponse.json();
+            planets[i] = planetData;
+        }
+        
+        //now, create the table  
+        let table = document.createElement('table');
+        document.body.appendChild(table);
+        
+        let firstRow = document.createElement('tr');
+        table.appendChild(firstRow);
+        let heading = document.createElement('td');
+        heading.classList.add("heading");
+        firstRow.appendChild(heading);
+        heading.textContent = "Star Wars";
+
+        let secondRow = document.createElement('tr').table.appendChild(secondRow);
+
+        let name = document.createElement('td');
+        secondRow.appendChild(name);
+        name.textContent = "Name:";
+
+        let hair = document.createElement('td');
+        secondRow.appendChild(hair);
+        name.textContent = "Hair:";
+
+        let height = document.createElement('td');
+        secondRow.appendChild(height);
+        name.textContent = "Height:";
+
+        let planetName = document.createElement('td');
+        secondRow.appendChild(planetName);
+        name.textContent = "Planet Name:";
+
+        let planetPop = document.createElement('td');
+        secondRow.appendChild(planetPop);
+        name.textContent = "Planet Population:";
+
+        
+}
+
+createStarWarsTable();
+
+
+
+</script>
+</body>
+</html>
