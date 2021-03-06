@@ -73,15 +73,15 @@
             margin: 10px;
             display: grid;
             grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto;
-            grid-gap: 20px;
+            grid-gap: 10  px;
             width: 100%;  
             grid-auto-flow: row dense;
         }
         .card {
             padding: 15px;
             background-color: rgb(186, 212, 212);
-            width: 250px;
-            height: 400px;
+            width: 200px;
+            height: 350px;
             border-radius: 7px;
             line-height: 1.5rem;
             display: block;
@@ -146,51 +146,53 @@
     document.body.appendChild(wrapper);
     wrapper.classList.add("wrapper");
 
+    function getAPI (username) {
+        const endPoint = `https://api.github.com/users/`;
+    }
+
     async function generateCard (username) {
 
         if (errorFlag) document.remove('aftereend', error);
         errorFlag = false;
-        try {
-            const endPoint = `https://api.github.com/users/`;
-            const gitResponse = await fetch(`${endPoint}${username}`);
-                if(gitResponse.ok) {
-                    const userData = await gitResponse.json();
 
-                    //Save user data
-                    const userImage = userData.avatar_url;
-                    const userName = userData.login;
-                    const userID = userData.id;
-                    const numOfRepos = userData.public_repos;
-                    const userLink = `https://github.com/${username}`;
+        
+        const gitResponse = await fetch(`${endPoint}${username}`);
+            if(gitResponse.ok) {
+            const userData = await gitResponse.json();
 
-                    //Create Card
-                    const card = document.createElement('div');
-                    wrapper.insertAdjacentElement('afterbegin' ,card);
-                    card.classList.add('card');
-                    
-                    const img = document.createElement('img');
-                    card.appendChild(img);
-                    img.classList.add('img');
-                    img.src = `${userImage}`;
+            //Save user data
+            const userImage = userData.avatar_url;
+            const userName = userData.login;
+            const userID = userData.id;
+            const numOfRepos = userData.public_repos;
+            const userLink = `https://github.com/${username}`;
 
-                    const info = document.createElement('div');
-                    card.appendChild(info);
-                    info.classList.add('.info');
-                    info.innerHTML = `${username} <br> id: ${userID} <br> 
-                    Repositories: ${numOfRepos}`;
-                    const link = document.createElement('a');
-                    card.appendChild(link);
-                    link.href = `${userLink}`;
-                    link.textContent = `${username}'s Page`;
-                    link.target = "blank";
-            }
-            else throw new Error('Something went wrong');
+            //Create Card
+            const card = document.createElement('div');
+            wrapper.insertAdjacentElement('afterbegin' ,card);
+            card.classList.add('card');
+            
+            const img = document.createElement('img');
+            card.appendChild(img);
+            img.classList.add('img');
+            img.src = `${userImage}`;
+
+            const info = document.createElement('div');
+            card.appendChild(info);
+            info.classList.add('.info');
+            info.innerHTML = `${username} <br> id: ${userID} <br> 
+            Repositories: ${numOfRepos}`;
+            const link = document.createElement('a');
+            card.appendChild(link);
+            link.href = `${userLink}`;
+            link.textContent = `${username}'s Page`;
+            link.target = "blank";
         }
-        catch(error) {
-            if (!errorFlag && !gitResponse.ok) {
+        else {
+            if (!errorFlag) {
                 let error = document.createElement('div');
                 error.classList.add('error');
-                error.innerHTML = "OOps! something went wrong."
+                error.innerHTML = "OOps! something went wrong.";
                 input.insertAdjacentElement('aftereend', error);
                 errorFlag = true;
             }
