@@ -1,3 +1,7 @@
+//game levels
+const EASY = 12;
+const MEDIUM = 20;
+const HARD = 30;
 //this game's card id's
 let cardIds = [];
 
@@ -30,33 +34,33 @@ let firstCardPlayed = null;
 //Update total rows/columns 
 //accourding to the level number
 //*********************** Runs at start
-function rowsColumnsForLevel (levelNumber) {
+function rowsColumnsForLevel () {
     //easy
-    if (levelNumber == 12) {
+    if (levelNumber == EASY) {
         totalRows = 3;
         totalColums = 4;
     }
     //medium
-    else if (levelNumber == 20) {
+    else if (levelNumber == MEDIUM) {
         totalRows = 4;
         totalColums = 5;
     }
     //hard
-    else if (levelNumber == 30) {
+    else if (levelNumber == HARD) {
         totalRows = 5;
         totalColums = 6;
     }
     //error
     else console.log("Error: no level was picked");
 }
-rowsColumnsForLevel(levelNumber);
+rowsColumnsForLevel();
 
 
 // a function that recives the "easy" / "medium" / "hard" levelNumbers
 // and returns an array of ID's.
 //Also updates the global array cardIds.
 //**************************Runs at start
-function createIdArr (levelNumber) {
+function createIdArr () {
     const firstArr = [];
     for (i = 1; i <= levelNumber/2; i++) {
         firstArr.push(i);
@@ -75,7 +79,7 @@ function createIdArr (levelNumber) {
 
     return idArr;
 }
-createIdArr(levelNumber);
+createIdArr();
 
 //Function that creates the board grid and fills it with cards.
 //the cards get an id from global idArr
@@ -108,6 +112,7 @@ function createCards () {
         }
     }
 }
+
 createCards();
 
 
