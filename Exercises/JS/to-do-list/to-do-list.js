@@ -1,3 +1,5 @@
+
+
 class Task {
     static counter = 0
     constructor (_taskStr) {
@@ -5,7 +7,16 @@ class Task {
         this.text = _taskStr,
         this.isCompeleted = false
     }
+
+    getCopy() {
+        const result = new Task(this.text);
+        result.id = this.id;
+        result.isCompeleted = this.isCompeleted;
+
+        return result;
+    }
 }
+
 
 class ToDoList {
     static counter = 0;
@@ -27,10 +38,19 @@ class ToDoList {
         }
         return null;
     }
+
+    getTaskByIndex(index) {
+        if (index >= 0 && index < this.tasksList.length) 
+            return this.tasksList[index];
+        else 
+            return null;
+    }
+
     editTask(str, id) {
         const task = this.getTaskById(id);
         task.text = str; 
     }
+
     taskDone(id) {
         const task = this.getTaskById(id);
         task.isCompeleted = true;
@@ -50,6 +70,30 @@ class ToDoList {
     deleteTask(id) {
         let index = this.getIndex(id);
         this.tasksList.splice(index, 1);
+    }
+
+    print() {
+        console.log(this.title);
+        console.log("-----------------------------");
+        for (let i=0; i<this.tasksList.length; i++) {
+            console.log("* "+this.tasksList[i].text);
+        }
+    }
+
+    add(task) {
+        for (let i = 0; i<this.tasksList.length; i++) {
+
+            let idExists = false;
+            if (this.tasksList[i].id === task.id) {
+                tasksList[i].text = task.text;
+                tasksList[i].isCompeleted = task.isCompeleted;
+                idExists.true;
+                break;
+            }
+            if (!idExists) {
+                // code to add a new task to list
+            }
+        }
     }
 }
 
@@ -89,33 +133,52 @@ class Lists {
         list.title = str; 
     }
     getIndex(id) {
-        let index = -1;
         for (let i = 0; i< this.lists.length; i++) {
             const list = this.lists[i];
-            if(list.id == id) index = i;
+            if(list.id == id) return i;
         }
-        return index;
     }
     deletelist(id) {
         let index = this.getIndex(id);
         this.lists.splice(index, 1);
     }
 }
-// const lists = new Lists;
 
-// const tasksList1 = new ToDoList("Groceries");
-// tasksList1.newTask("Cucamber");
-// tasksList1.newTask("Tomato");
-// const tasksList2 = new ToDoList("Chors");
-// tasksList2.newTask("Clean room");
-// tasksList2.newTask("Hang laundry");
-// const tasksList3 = new ToDoList("Study");
-// tasksList3.newTask("JS");
-// tasksList3.newTask("HTML");
+module.exports = {Task, Lists, ToDoList}; 
 
-// lists.addList(tasksList1);
-// lists.addList(tasksList2);
-// lists.addList(tasksList3);
+const tasksList1 = new ToDoList("Groceries");
+let firstID = tasksList1.newTask("Cucumber");
+tasksList1.newTask("Tomato");
+const tasksList2 = new ToDoList("Chores");
+tasksList2.newTask("Clean room");
+tasksList2.newTask("Hang laundry");
+const tasksList3 = new ToDoList("Study");
+tasksList3.newTask("JS");
+tasksList3.newTask("HTML");
+
+//const myID = tasksList1.newTask("Watermelon");
+
+//tasksList1.print();
+
+//const newTask = tasksList1.getTaskById(firstID);
+
+//console.log(tasksList1.getTaskById(firstID).text);
+
+
+
+//tasksList1.editTask("Orange",myID);
+
+//tasksList1.print();
+
+//tasksList2.print();
+//tasksList3.print();
+
+
+
+//const lists = new Lists;
+//lists.addList(tasksList1);
+//lists.addList(tasksList2);
+//lists.addList(tasksList3);
 
 // lists.newlist("Help");
 
@@ -147,7 +210,7 @@ class Lists {
 // // testTask("feed cat");
 // // testTask("feed parrot");
 // // testTask("feed mouse");
-
+/*
 //colors for the lists
 const listColors = ['powderblue', 'palegoldenrod', 'pink', 'aquamarine', 'lightgreen', 'plum'];
 
@@ -263,3 +326,4 @@ const createListButton = document.querySelector(".new-list-btn");
 createListButton.addEventListener('click', createNewList);
 
 
+*/
