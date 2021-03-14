@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
+//inport my code from an external file
+import Ex1 from './Compopnents/Ex1.js';
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +20,10 @@ function App() {
         >
           Click Me!
         </a>
+        {/* my code */}
+        <Ex1/>
+        <br></br>
+        <hr></hr>
       </header>
     </div>
   );
