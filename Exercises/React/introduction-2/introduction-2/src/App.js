@@ -6,6 +6,8 @@ import Ex3 from './Components/Ex2c.js';
 
 import Box1 from './Components/boxes/box1';
 
+import Quiz from './Components/Quiz/Quiz'
+
 function App() {
   return (
     <div className="App">
@@ -17,9 +19,9 @@ function App() {
       <Ex3/>
       </header>
       <hr></hr>
-      <Box1>
-   
-      </Box1>
+      <Box1/>
+      <hr></hr>
+      <Quiz/>
 
     </div>
   );

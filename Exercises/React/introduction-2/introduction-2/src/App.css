@@ -69,3 +69,7 @@ background-color: lightskyblue;
   margin: 10px;
   background-color: plum;
 }
+
+.Quiz {
+  width: fit-content;
+}
