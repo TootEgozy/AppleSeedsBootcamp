@@ -9,6 +9,7 @@ import Box1 from './Components/boxes/box1';
 import Quiz from './Components/Quiz/Quiz';
 
 import Button from './Components/Button/Button';
+import CardContainer from './Components/Cadrs/CardContainer';
 
 
 
@@ -30,6 +31,7 @@ function App() {
       <Button fontWeight={"bold"} text={"Important"} />
       <Button fontWeight={"200"} text={"Not important"} />
       <hr></hr>
+      <CardContainer/>
     </div>
   );
 }

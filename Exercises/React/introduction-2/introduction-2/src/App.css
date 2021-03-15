@@ -73,3 +73,8 @@ background-color: lightskyblue;
 .Quiz {
   width: fit-content;
 }
+
+.card {
+  width: 300px;
+  height: 450px;
+}
