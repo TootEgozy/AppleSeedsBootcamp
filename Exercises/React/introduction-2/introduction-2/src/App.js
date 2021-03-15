@@ -6,7 +6,11 @@ import Ex3 from './Components/Ex2c.js';
 
 import Box1 from './Components/boxes/box1';
 
-import Quiz from './Components/Quiz/Quiz'
+import Quiz from './Components/Quiz/Quiz';
+
+import Button from './Components/Button/Button';
+
+
 
 function App() {
   return (
@@ -22,7 +26,10 @@ function App() {
       <Box1/>
       <hr></hr>
       <Quiz/>
-
+      <hr></hr>
+      <Button fontWeight={"bold"} text={"Important"} />
+      <Button fontWeight={"200"} text={"Not important"} />
+      <hr></hr>
     </div>
   );
 }
