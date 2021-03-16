@@ -1,6 +1,7 @@
 import './App.css';
 import Color from './Components/Ex8.1/Color';
 import Box1 from './Components/Ex8.2/Box1';
+import Box2 from './Components/Ex8.3/Box2';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       <Box1
       Color="green"
       />
+      <hr></hr>
+      <p>Ex 8.3:</p>
+      <Box2/>
     </div>
   );
 }
