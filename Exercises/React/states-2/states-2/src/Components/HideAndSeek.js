@@ -9,7 +9,13 @@ constructor(props) {
 render() {
     if (this.state.show){
     return (
-        <div>
+        <fieldset style={{
+            display: "flex",
+            width: "60vw",
+            height: "150px",
+            flexDirection: "column",
+            alignItems: "center"
+        }}>
             <button onClick={() => this.setState({show: false})}>
             show/hide
             </button>
@@ -19,15 +25,21 @@ render() {
                 height: "150px"}}>
 
                 </div>
-        </div>
+        </fieldset>
     )}
     if (!this.state.show) {
         return (
-            <div>
+            <fieldset style={{
+                display: "flex",
+                width: "60vw",
+                height: "150px",
+                flexDirection: "column",
+                alignItems: "center"
+                }}>
                 <button onClick={() => this.setState({show: true})}>
                 show/hide
                 </button>
-            </div>
+            </fieldset>
         );
     }
 }
