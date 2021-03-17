@@ -12,7 +12,7 @@ class Box2 extends React.Component {
 
     componentDidMount() {
         setInterval(()=> {
-            this.setState({colorI: +1})
+            this.setState({colorI: (this.state.colorI+1)%4})
         }, 1000);
     }
 
