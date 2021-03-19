@@ -5,8 +5,8 @@ class ColorButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {color: this.props.color}
-        console.log("New Button is made! Color "+this.props.color);
-        console.log(props);
+        // console.log("New Button is made! Color "+this.props.color);
+        // console.log(props);
     }
     componentDidMount () {
         console.log(this.state.color);
