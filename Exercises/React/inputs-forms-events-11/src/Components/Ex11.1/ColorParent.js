@@ -21,7 +21,7 @@ class ColorParent extends React.Component {
 
     render () { 
         return <fieldset className="a4">
-                {colors.map(color => <ColorButton color={color} changeColorState={this.changeMyColor}/>)}
+                {colors.map(color => <ColorButton color={color} changeColorState={this.changeMyColor}/>)}                
                 <div className="a3" style={{color:this.state.color}}>{this.state.color}</div>
            </fieldset>
   }
