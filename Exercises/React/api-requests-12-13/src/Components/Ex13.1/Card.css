@@ -1,0 +1,11 @@
+.person-card {
+  padding: 1rem;
+  border: 2px solid fuchsia;
+  margin: 2rem;
+  border-radius: 5px;
+  width: 200px;
+  height: 250px;
+  display: inline-block;
+  box-shadow: 3px 3px 8px darkgray;
+  background-image: radial-gradient(white, white, thistle);
+}
