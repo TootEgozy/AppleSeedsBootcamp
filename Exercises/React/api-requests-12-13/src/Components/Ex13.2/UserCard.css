@@ -1,0 +1,33 @@
+.people-cards-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cards-container-13-3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.person-card2 {
+  margin: 2rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px darkslateblue;
+  width: 200px;
+  height: 300px;
+}
+
+.person-card2 img {
+  width: 198px;
+  margin-top: 50px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  height: auto;
+}
+
+.my-button {
+  background-color: darkturquoise;
+  padding: 0.5rem;
+}
