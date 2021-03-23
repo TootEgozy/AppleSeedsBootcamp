@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+#myForm {
+  left: 20%;
+  position: relative;
+  background-image: radial-gradient(white, powderblue);
+  width: fit-content;
+  height: fit-content;
+  padding: 1rem;
+  margin: 10px;
+}
+#myForm > div {
+  left: 5%;
+  position: relative;
+  background-color: powderblue;
+  width: fit-content;
+  height: fit-content;
+  padding: 1rem;
+  margin: 5px;
+  border-radius: 20px;
+}
+
+textarea {
+  margin: 5px;
+  width: 200px;
+}
+
+.cancel,
+.approve,
+.submit {
+  background-color: white;
+  color: rgb(0, 0, 141);
+  border: 1px solid rgb(139, 139, 139);
+  font-size: 14px;
+  font-weight: bolder;
+  text-shadow: 0px 0px 1px black;
+  box-shadow: 1px 1px 2px rgb(105, 105, 105);
+}
+
+.cancel:hover,
+.approve:hover,
+.submit:hover {
+  background-color: rgb(55, 118, 190);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(139, 139, 139);
+  font-size: 14px;
+  font-weight: bolder;
+  text-shadow: 0px 0px 1px black;
+  box-shadow: 1px 1px 2px rgb(105, 105, 105);
+}
+
+.are-you-sure-card-container {
+  position: absolute;
+  z-index: 5;
+  left: 155px;
+  height: 400px;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px dimgray;
+  background-image: radial-gradient(rgb(245, 219, 245), rgb(234, 135, 247));
+}
+
+.are-you-sure-card-container > h5 {
+  text-decoration: underline;
+}

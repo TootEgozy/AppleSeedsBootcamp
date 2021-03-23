@@ -9,7 +9,7 @@ class Parent2 extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            numOfPeople: 10,
+            numOfPeople: 20,
             people: [],
             value: "all",
         }
@@ -28,8 +28,8 @@ class Parent2 extends React.Component {
         for(let i = 0; i < this.state.numOfPeople; i++) {
             let res = await axios(config);
             peopleArr.push(res);
-            console.log("ufilterd data:");
-            console.log(peopleArr);
+            // console.log("ufilterd data:");
+            // console.log(peopleArr);
         }
 
         const filteredPeople = peopleArr.map(person => {
@@ -40,8 +40,8 @@ class Parent2 extends React.Component {
         })
         await this.setState({people: filteredPeople});
         this.peopleConst = filteredPeople;
-        console.log("new people const:");
-        console.log(this.peopleConst);
+        // console.log("new people const:");
+        // console.log(this.peopleConst);
 
     }
 

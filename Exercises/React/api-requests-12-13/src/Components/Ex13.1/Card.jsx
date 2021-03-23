@@ -11,8 +11,8 @@ class Card extends React.Component {
         }
     }
     componentDidMount = () => {
-        console.log("state in card:");
-        console.log(this.state);
+        // console.log("state in card:");
+        // console.log(this.state);
     }
 
     componentDidUpdate = (prevProps) => {
@@ -23,8 +23,8 @@ class Card extends React.Component {
                  favoriteFoods: this.props.favoriteFoods
              });
          }
-        console.log("state in card:");
-        console.log(this.state);
+        // console.log("state in card:");
+        // console.log(this.state);
     }
 
     render() {

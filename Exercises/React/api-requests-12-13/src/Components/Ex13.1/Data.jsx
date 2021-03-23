@@ -60,8 +60,8 @@ class Data extends React.Component {
     componentDidMount = async() => {
        await this.getNames();
        await this.getBornBef1990();
-       console.log("state is:");
-       console.log(this.state);
+    //    console.log("state is:");
+    //    console.log(this.state);
     }
 
     getNames = () => {
