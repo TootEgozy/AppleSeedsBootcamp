@@ -1,0 +1,10 @@
+textarea::selection {
+  color: hotpink;
+  background-color: rgb(253, 255, 137);
+}
+
+button:hover,
+button:active {
+  color: hotpink;
+  background-color: rgb(253, 255, 137);
+}
