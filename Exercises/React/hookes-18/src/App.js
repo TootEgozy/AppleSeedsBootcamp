@@ -2,6 +2,7 @@ import './App.css';
 import Father from './Components/18.1/Father';
 import Info from './Components/18.2/Info';
 import Time from './Components/18.3/Time';
+import Numbers from './Components/18.4/Numbers';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <div>******************************************************************************************************************************************************************</div>
       <div>Ex 18.3:</div>
       <Time/>
+      <div>******************************************************************************************************************************************************************</div>
+      <div>Ex 18.4:</div>
+      <Numbers/>
     </div>
   );
 }

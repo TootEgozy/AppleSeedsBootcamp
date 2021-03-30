@@ -1,8 +1,11 @@
+// this works only partially.
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 import React,{useState} from 'react'
-import TimeUnit from './TimeUnit';
+
 
 export default function Time(props) {
-
     let [chosenUnit, setChosenUnit] = useState("seconds");
     let [unitValue, setUnitValue] = useState (60);
 
@@ -15,10 +18,10 @@ export default function Time(props) {
     }
     
     const calcValue = (myUnit) => {
-       console.log("******************************");
-       console.log("myUnit: "+myUnit);
-       console.log("chosenUnit (in state): "+chosenUnit);
-       console.log("unitValue (in state): "+unitValue);
+    //    console.log("******************************");
+    //    console.log("myUnit: "+myUnit);
+    //    console.log("chosenUnit (in state): "+chosenUnit);
+    //    console.log("unitValue (in state): "+unitValue);
         
         if (myUnit === chosenUnit) return unitValue;
 
@@ -31,10 +34,10 @@ export default function Time(props) {
     }
 
     let secondsVal = calcValue("seconds");
-    console.log("-----------------------------");
-    console.log("secondsVal: "+secondsVal);
-    console.log("typof unitValue "+typeof unitValue);
-    console.log("unitValue " +unitValue);
+    // console.log("-----------------------------");
+    // console.log("secondsVal: "+secondsVal);
+    // console.log("typof unitValue "+typeof unitValue);
+    // console.log("unitValue " +unitValue);
 
     return (
         <div>
