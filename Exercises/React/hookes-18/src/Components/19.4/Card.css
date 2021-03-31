@@ -1,0 +1,14 @@
+fieldset {
+  display: inline-block;
+  width: 200px;
+  height: 350px;
+  box-shadow: 2px 2px 3px darkcyan;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  margin: 1rem;
+}
+
+fieldset img {
+  width: 150px;
+  height: 150px;
+}
