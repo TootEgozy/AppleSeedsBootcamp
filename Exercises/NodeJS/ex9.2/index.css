@@ -1,0 +1,10 @@
+* {
+  align-items: center;
+}
+
+h1 {
+  font-size: 20rem;
+  color: fuchsia;
+  text-shadow: 3px 3px blue;
+  align-self: center;
+}
