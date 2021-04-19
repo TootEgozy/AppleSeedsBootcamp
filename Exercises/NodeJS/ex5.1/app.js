@@ -1,8 +1,7 @@
 const fs = require("fs");
 const express = require("express");
-const http = require('http');
 const router = express.Router();
-
+const http = require('http');
 const studentsMethods = require("./functions");
 
 // creating my json file
