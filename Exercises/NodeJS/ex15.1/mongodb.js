@@ -88,6 +88,24 @@ MongoClient.connect(connectionURL, {useNewUrlParser : true}, (error, client)=> {
         console.log(count);
     })
 
-    //updating documents with promises
-    
-})
+    //updating documents with promises:
+    //the promise with then/catch replaces the callback with error/object.
+    db.collection('Test').updateOne({
+        name: 'Toot'
+    },
+    {
+        $set: {
+            name: 'Toot Egozy'
+        }
+    }).then(result=>console.log(result))
+    .catch(error=> console.log(error));
+
+
+    //delete documents with promise
+
+    db.collection('Test').deleteMany({
+        age: 26
+    }).then(console.log('deleted'))
+    .catch(error=> (console.log(error)));
+
+});
