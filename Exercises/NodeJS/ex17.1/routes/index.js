@@ -9,7 +9,7 @@ router.get('/', (req, res)=> {
 }).post('/', (req, res)=> {
     productController.create(req, res);
 })
-
+//why is this not working?...
 router.get('/hey', (req,res)=> {
     productController.getProductByName(req, res);
 })
