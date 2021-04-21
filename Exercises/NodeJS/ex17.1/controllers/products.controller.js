@@ -30,6 +30,16 @@ const getProductByProp = (req, res)=> {
 }
 
 const deleteProductByProp = (req, res)=> {
+    //for some reason' this works but returns the error message... so i left the "then" syntax    
+    // try {
+    //     const search = req.body;
+    //     await productModel.findOneAndDelete(search);
+    //     return res.send('deleted! ' + product);
+    // } 
+    // catch (e) {
+    //     return res.send("could not delete");
+    // }
+
     const search = req.body;
     productModel.findOneAndDelete(search)
         .then((product)=> {
@@ -44,38 +54,28 @@ const getproducts = (req, res) => {
     });
 }
 
-const getAllActives = (req, res)=> {
-    productModel.find({"isActive": "true"}).
-    then((products)=> {
+const getAllActives = async(req, res)=> {
+    try {
+        const products = await productModel.find({"isActive": "true"});
         return res.send(products)
-    })
-    .catch(error => res.send(error));
-    // console.log(req.body);
-    // return res.send({"works": "true"});
+    }
+    catch(e) {
+        return res.send("could not get users");
+    }
 }
 
-const getPriceRange = (req, res)=> {
-    // const min = req.body.min;
-    // const max = req.body.max;
-    // const findArgs = {
-    //     $gte:0,
-    //     $lte:500
-    // };
-
-    //{details: {price: {$gte: 0}}}
-
-    //$and: adress all the operators in the array
-    //put all of the search queries in an array, in a json format,
-    //we can search other queries then a price in the same array, for example:
-    //all of the costumers named john age 18+ which are active.
-        productModel.find({ $and: [{ "details.price": { $gte: 400 } }, { "details.price": { $lt: 500 } }] })
-    .then((product)=> {
-        console.log(product);
-        return res.send(product)
-    })
-    .catch((error)=> {
-        return res.send(error)
-    })
+const getPriceRange = async (req, res)=> {
+     try {
+        //$and: adress all the operators in the array
+        //put all of the search queries in an array, in a json format,
+        //we can search other queries then a price in the same array, for example:
+        //all of the costumers named john age 18+ which are active.
+         const products = await productModel.find({ $and: [{ "details.price": { $gte: 400 } }, { "details.price": { $lt: 500 } }] })
+        return res.send(products)
+     }
+     catch(e) {
+        return res.send("could not get products");
+     }
 }
 module.exports = {
     create: createProduct,
