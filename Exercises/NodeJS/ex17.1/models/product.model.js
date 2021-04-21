@@ -17,7 +17,12 @@ const productSchema = mongoose.Schema({
         type: Boolean,
         default: true
     },
-    details: {}
+    details: {
+        price: {
+            type: Number,
+            required: false
+        }
+    }
 })
 
 const productmodal  = mongoose.model('products',productSchema);

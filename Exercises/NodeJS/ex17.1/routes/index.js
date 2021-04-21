@@ -9,15 +9,21 @@ router.get('/', (req, res)=> {
 }).post('/', (req, res)=> {
     productController.create(req, res);
 })
-//why is this not working?...
-router.get('/hey', (req,res)=> {
-    productController.getProductByName(req, res);
+
+router.get('/findByProp', (req, res)=> {
+    productController.getProductByProp(req, res);
 })
 
-router.get('/findByName', (req, res)=> {
-    console.log("in /findByName");
-    // productController.getProductByName(req, res);
-    res.send('hey');
+router.delete('/deleteProduct', (req, res)=> {
+    productController.deleteProductByProp(req, res);
+})
+
+router.get('/getActive', (req, res)=> {
+    productController.getAllActives(req,res);
+})
+
+router.get('/getByPriceRange', (req, res)=> {
+    productController.getPriceRange(req, res);
 })
 
 
