@@ -77,11 +77,48 @@ const getPriceRange = async (req, res)=> {
         return res.send("could not get products");
      }
 }
+
+const updateProduct = async(req, res) => {
+    try {
+        //find the user by the url id, change params in the user with the request body (can only update fileds in the user,
+        //not create new ones like this), run all the model validators for this, and create a new user from the data to replace the old one.
+        const product = await productModel.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true});
+        
+        //no product found in the id's search
+        if(!product) {
+            return res.status(404).send("no product found with id of "+req.params.id);
+        }
+
+        //success
+        return res.send(product);
+    }
+    catch(e) {
+        //could not update due to validation error
+        return res.status(400).send(e);
+    }
+} 
+
+const deleteProduct = async(req, res)=> {
+    try {
+        const product = await productModel.findByIdAndDelete(req.params.id);
+        if(!product) {
+            return res.status(404).send("no product found with id of "+req.params.id);
+        }
+        return res.send(product);
+    }
+    catch(e) {
+        return res.send(e)
+    }
+
+}
+
 module.exports = {
     create: createProduct,
     getAll: getproducts,
     getProductByProp: getProductByProp,
     deleteProductByProp: deleteProductByProp,
     getAllActives: getAllActives,
-    getPriceRange: getPriceRange
+    getPriceRange: getPriceRange,
+    updateProduct: updateProduct,
+    deleteProduct: deleteProduct
 }

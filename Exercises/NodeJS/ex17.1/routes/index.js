@@ -26,5 +26,13 @@ router.get('/getByPriceRange', (req, res)=> {
     productController.getPriceRange(req, res);
 })
 
+router.put('/updateProduct/:id', (req, res)=> {
+    productController.updateProduct(req, res);
+})
+
+router.delete('/deleteProduct/:id', (req, res)=> {
+    productController.deleteProduct(req, res);
+})
+
 
 module.exports = router;
